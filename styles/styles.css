@@ -1,0 +1,113 @@
+/* Restablecimiento de estilos por defecto */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-synthesis: none;
+ }
+
+/* Ruta a las tipografías */
+
+@font-face {
+    font-family: "Athelas Regular";
+    src: url ("../assets/fonts/athelas-regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Athelas Bold";
+    src: url ("../assets/fonts/athelas-bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Athelas Italic";
+    src: url ("../assets/fonts/athelas-italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Athelas Bold Italic";
+    src: url ("../assets/fonts/athelas-bold-italic.ttf");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Waymar Regular";
+    src: url ("../assets/fonts/waymar-regular.ttf")
+}
+
+@font-face {
+    font-family: "Waymar Script";
+    src: url ("../assets/fonts/waymar-script.ttf");
+}
+
+@font-face {
+    font-family: "Waymar Outline";
+    src: url ("../assets/fonts/waymar-outline.ttf");
+}
+
+@font-face {
+    font-family: "Waymar Ornate";
+    src: url ("../assets/fonts/waymar-ornate.ttf");
+}
+
+/* Variables CSS */
+ 
+:root {
+
+/* Paletas de colores */
+
+    --color-principal-blanco: #ffffff;
+    --color-principal-oscuro: #2e1a08;
+    --color-secundario-crema: #f2eee5;
+    --color-secundario-marron: #331f19;
+    --color-resaltado-beige: #DAB075;
+
+/* Tipografías */
+
+--tipografia-logo: 'Waymar Regular', sans-serif;
+--tipografia-titulos: 'Waymar Regular', sans-serif;
+--tipografia-titulos-outline: 'Waymar Outline', sans-serif;
+--tipografia-titulos-decorativa: 'Waymar Ornate', sans-serif;
+--tipografia-subtitulos-cursiva: 'Waymar Script', sans-serif;
+--tipografia-cuerpo-regular: 'Athelas Regular', sans-serif;
+--tipografia-cuerpo-italic: 'Athelas Italic', sans-serif;
+--tipografia-cuerpo-bold: 'Athelas Bold', sans-serif;
+--tipografia-cuerpo-bold-italic: 'Athelas Bold Italic', sans-serif;
+
+}
+
+/* Personalización de estilos */
+
+body {
+
+    background-color: var (--color-principal-blanco);
+    color: var (--color-principal-oscuro);
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var (--tipografia-titulos);
+    font-size: 2.5rem;
+    color: var (--color-principal-oscuro);
+}
+
+p {
+    font-family: var (--tipografia-cuerpo-regular);
+    font-size: 1rem;
+    color: var (--color-principal-oscuro);
+}
+
+button {
+    background-color: var (--color-resaltado-beige);
+    color: var (--color-secundario-crema);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
