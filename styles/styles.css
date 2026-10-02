@@ -1,113 +1,218 @@
 /* Restablecimiento de estilos por defecto */
 
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-synthesis: none;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-synthesis: none;
+    text-decoration: none;
+}
 
 /* Ruta a las tipografías */
 
 @font-face {
     font-family: "Athelas Regular";
-    src: url ("../assets/fonts/athelas-regular.ttf");
+    src: url("../assets/fonts/athelas-regular.ttf");
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Athelas Bold";
-    src: url ("../assets/fonts/athelas-bold.ttf");
+    src: url("../assets/fonts/athelas-bold.ttf");
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Athelas Italic";
-    src: url ("../assets/fonts/athelas-italic.ttf");
+    src: url("../assets/fonts/athelas-italic.ttf");
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Athelas Bold Italic";
-    src: url ("../assets/fonts/athelas-bold-italic.ttf");
+    src: url("../assets/fonts/athelas-bold-italic.ttf");
     font-weight: 700;
     font-style: italic;
 }
 
 @font-face {
     font-family: "Waymar Regular";
-    src: url ("../assets/fonts/waymar-regular.ttf")
+    src: url("../assets/fonts/waymar-regular.ttf")
 }
 
 @font-face {
     font-family: "Waymar Script";
-    src: url ("../assets/fonts/waymar-script.ttf");
+    src: url("../assets/fonts/waymar-script.ttf");
 }
 
 @font-face {
     font-family: "Waymar Outline";
-    src: url ("../assets/fonts/waymar-outline.ttf");
+    src: url("../assets/fonts/waymar-outline.ttf");
 }
 
 @font-face {
     font-family: "Waymar Ornate";
-    src: url ("../assets/fonts/waymar-ornate.ttf");
+    src: url("../assets/fonts/waymar-ornate.ttf");
 }
 
 /* Variables CSS */
- 
+
 :root {
 
-/* Paletas de colores */
+    /* Paletas de colores */
 
-    --color-principal-blanco: #ffffff;
-    --color-principal-oscuro: #2e1a08;
-    --color-secundario-crema: #f2eee5;
-    --color-secundario-marron: #331f19;
-    --color-resaltado-beige: #DAB075;
+    /* Color 1 solo para identificar texto sin estilizar o casos excepcionales */
 
-/* Tipografías */
+    --color-1-abedul: #f6f3ec;
+    --color-2-arce: #dbccaf;
+    --color-3-roble: #dab075;
+    --color-4-nogal: #2e1a08;
+    --color-5-ebano: #15110f;
 
---tipografia-logo: 'Waymar Regular', sans-serif;
---tipografia-titulos: 'Waymar Regular', sans-serif;
---tipografia-titulos-outline: 'Waymar Outline', sans-serif;
---tipografia-titulos-decorativa: 'Waymar Ornate', sans-serif;
---tipografia-subtitulos-cursiva: 'Waymar Script', sans-serif;
---tipografia-cuerpo-regular: 'Athelas Regular', sans-serif;
---tipografia-cuerpo-italic: 'Athelas Italic', sans-serif;
---tipografia-cuerpo-bold: 'Athelas Bold', sans-serif;
---tipografia-cuerpo-bold-italic: 'Athelas Bold Italic', sans-serif;
+
+    /* Tipografías */
+
+    --tipografia-logo: 'Waymar Regular', sans-serif;
+    --tipografia-titulos: 'Waymar Regular', sans-serif;
+    --tipografia-titulos-outline: 'Waymar Outline', sans-serif;
+    --tipografia-titulos-decorativa: 'Waymar Ornate', sans-serif;
+    --tipografia-subtitulos-cursiva: 'Waymar Script', sans-serif;
+    --tipografia-cuerpo-regular: 'Athelas Regular', sans-serif;
+    --tipografia-cuerpo-italic: 'Athelas Italic', sans-serif;
+    --tipografia-cuerpo-bold: 'Athelas Bold', sans-serif;
+    --tipografia-cuerpo-bold-italic: 'Athelas Bold Italic', sans-serif;
 
 }
 
-/* Personalización de estilos */
+/* Personalización de estilos GENERALES*/
 
 body {
 
-    background-color: var (--color-principal-blanco);
-    color: var (--color-principal-oscuro);
+    background-color: var(--color-5-ebano);
+    color: var(--color-1-abedul);
 
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var (--tipografia-titulos);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--tipografia-titulos);
     font-size: 2.5rem;
-    color: var (--color-principal-oscuro);
 }
 
 p {
-    font-family: var (--tipografia-cuerpo-regular);
-    font-size: 1rem;
-    color: var (--color-principal-oscuro);
+    font-family: var(--tipografia-cuerpo-regular);
+    font-size: 1.25rem;
 }
 
 button {
-    background-color: var (--color-resaltado-beige);
-    color: var (--color-secundario-crema);
+    background-color: var(--color-2-arce);
+    color: var(--color-4-nogal);
+    font-family: var(--tipografia-subtitulos-cursiva);
+    font-size: 1.25rem;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 30px 8px 30px;
     cursor: pointer;
 }
+
+/* Personalización de estilos del HEADER */
+
+.header-contenedor {
+    background-color: var(--color-5-ebano);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.header-logo {
+    width: 10rem;
+    height: auto;
+}
+
+.header-nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.header-nav a {
+    color: var(--color-2-arce);
+    font-family: var(--tipografia-cuerpo-regular);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+/* Quería agregarle algún tipo de señalador a la página en la que uno esté posicionado y le pedí a Ticher que me oriente para ponerle tres puntitos como diferenciador.
+Así que aprendí lo que son los pseudoelementos y en particular el que me servía a mí "::after", y las propiedades de letter-spacing y transform. */
+
+.header-nav a.active {
+    color: var(--color-3-roble);
+    position: relative;
+}
+
+.header-nav a.active::after {
+    content: "•••";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Personalización de estilos del MAIN */
+
+/* section-presentacion */
+
+.section-presentacion-contenedor {
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+}
+
+.section-presentacion {
+    /* La idea es en un futuro conseguir una imagen oscura en la que se pueda ver bien el texto.
+    Pero todavía no encontré ninguna que me guste mucho, por eso pongo un color similar de fondo. */
+    background-color: var(--color-4-nogal);
+    padding: 4rem 2rem;
+    color: var(--color-2-arce);
+}
+
+.section-presentacion-titulo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.titulo-decorativo {
+    font-family: var(--tipografia-titulos-decorativa);
+    font-size: 8rem;
+    line-height: 0.5;
+}
+
+.titulo-outline {
+    font-family: var(--tipografia-titulos-outline);
+    font-size: 6rem;
+    margin-left: 9rem;
+    line-height: 1;
+}
+
+.section-presentacion-descripcion {
+    font-family: var(--tipografia-cuerpo-regular);
+    font-size: 1rem;
+    margin-left: 1rem;
+    line-height: 1.5;
+
+}
+
+/* section-caracteristicas */

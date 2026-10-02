@@ -12,17 +12,21 @@
 
 <body>
     <header>
-        <nav>
-            <a href="../index.html">
-                <img src="../assets/images/logo/logo-2.png" alt="Logo de la marca Tolotti Ebanistas">
-            </a>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./nosotros.html">Nosotros</a></li>
-                <li><a href="./servicios.html">Servicios</a></li>
-                <li><a href="./proyectos.html">Proyectos</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-            </ul>
+    <header class="header-general">
+        <nav class="header-contenedor">
+
+                    <a href="../index.html">
+                        <img class="header-logo" src="../assets/images/logo/logo-2-negativo.png" alt="Logo de la marca Tolotti Ebanistas">
+                    </a>
+
+                    <ul class="header-nav">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="./nosotros.html">Nosotros</a></li>
+                        <li><a href="./servicios.html">Servicios</a></li>
+                        <li><a href="./proyectos.html">Proyectos</a></li>
+                        <li><a href="./contacto.html" class="active">Contacto</a></li>
+                    </ul>
+
         </nav>
     </header>
 
@@ -57,7 +61,7 @@
                 <label for="consulta-cliente">Adjunte el motivo de su consulta</label>
                 <textarea id="consulta-cliente" name="consulta-cliente" placeholder="Lo más detallado posible" minle
                     ngth="20" required>Complete su consulta</textarea>
-                <button type="sumbit">Envia consulta</button>
+                <button type="sumbit">Enviar consulta</button>
             </form>
         </article>
     </main>
