@@ -114,11 +114,11 @@ p {
 button {
     background-color: var(--color-2-arce);
     color: var(--color-4-nogal);
-    font-family: var(--tipografia-subtitulos-cursiva);
-    font-size: 1.25rem;
+    font-family: var(--tipografia-cuerpo-regular);
+    text-transform: uppercase;
+    font-size: 1rem;
     border: none;
-    padding: 12px 30px 8px 30px;
-    cursor: pointer;
+    padding: 14px 26px;
 }
 
 /* Personalización de estilos del HEADER */
@@ -150,7 +150,7 @@ button {
 }
 
 /* Quería agregarle algún tipo de señalador a la página en la que uno esté posicionado y le pedí a Ticher que me oriente para ponerle tres puntitos como diferenciador.
-Así que aprendí lo que son los pseudoelementos y en particular el que me servía a mí "::after", y las propiedades de letter-spacing y transform. */
+Así que aprendí lo que son los pseudoelementos y en particular el que me servía a mí "::after", y las propiedades de letter-spacing, transform y translateX. */
 
 .header-nav a.active {
     color: var(--color-3-roble);
@@ -167,25 +167,24 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     letter-spacing: 2px;
 }
 
-/* Personalización de estilos del MAIN */
+/* MAIN */
 
-/* section-presentacion */
+/* MAIN: PRESENTACIÓN */
 
 .section-presentacion-contenedor {
-    max-width: 50vw;
+    /* La idea es en un futuro conseguir una imagen oscura en la que se pueda ver bien el texto. Pero todavía no encontré ninguna que me guste mucho, por eso pongo un color similar de fondo. */
+    background-color: var(--color-4-nogal);
+    padding: 4rem 2rem;
+    color: var(--color-2-arce);
+}
+
+.section-presentacion-contenido {
+    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     gap: 1.5rem;
-}
-
-.section-presentacion {
-    /* La idea es en un futuro conseguir una imagen oscura en la que se pueda ver bien el texto.
-    Pero todavía no encontré ninguna que me guste mucho, por eso pongo un color similar de fondo. */
-    background-color: var(--color-4-nogal);
-    padding: 4rem 2rem;
-    color: var(--color-2-arce);
 }
 
 .section-presentacion-titulo {
@@ -215,4 +214,110 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 
 }
 
-/* section-caracteristicas */
+/* MAIN: CARACTERÍSTICAS */
+
+.section-caracteristicas-contenedor {
+    background-color: var(--color-2-arce);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+    color: var(--color-4-nogal);
+    gap: 5rem;
+}
+
+.section-caracteristicas-contenido {
+    display: flex;
+    flex: 1;
+    gap: 1rem;
+    padding: 0.5rem;
+    align-items: flex-start;
+}
+
+.section-caracteristicas-contenedor h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.section-caracteristicas-contenedor p {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+}
+
+/* Acá agregué el parametro de flex-shrink 0 porque se me estaban quedando chiquitos los iconos y no encontraba manera de solucionarlo. */
+.section-caracteristicas-contenido svg {
+    align-self: center;
+    height: 50px;
+    flex-shrink: 0;
+    fill: var(--color-4-nogal);
+}
+
+/* MAIN: PRODUCTO SEMANAL */
+.section-producto-semanal-contenedor {
+    background-color: var(--color-1-abedul);
+    padding: 3rem 0;
+}
+
+/* Contenedor flex: acá vive todo el espacio lateral de la sección. */
+.section-producto-semanal-contenido {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    padding: 20px;
+    margin-top: 1rem;
+    margin-right: 10rem;
+    margin-bottom: 1rem;
+    margin-left: 12rem;
+}
+
+.producto-semanal-imagen {
+    flex: 0 0 35%;
+    min-width: 0;
+    /* Acá consulté cómo poner un borde más sobresalido de la imagen así me generaba un marco lindo. */
+    outline: 2px solid var(--color-3-roble);
+    outline-offset: 10px;
+}
+
+.producto-semanal-texto {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    color: var(--color-5-ebano);
+}
+
+.producto-semanal-titulo {
+    font-family: var(--tipografia-cuerpo-regular);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-3-roble);
+}
+
+.producto-semanal-texto h3 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.producto-semanal-texto p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.producto-semanal-texto button {
+    /* Acá le agregué el atributo de transparente porque quería tener dos tipos de botones. */
+    background-color: transparent;
+    border: 2px solid var(--color-3-roble);
+    color: var(--color-3-roble);
+    font-family: var(--tipografia-cuerpo-regular);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 26px;
+}
+
+.producto-semanal-deco {
+    width: 14rem;
+    max-width: 100%;
+}

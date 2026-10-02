@@ -31,8 +31,8 @@
 
     <main class="main-general">
 
-        <section class="section-presentacion">
-            <div class="section-presentacion-contenedor">
+        <section class="section-presentacion-contenedor">
+            <div class="section-presentacion-contenido">
                 <!-- En este caso, como quiero que este h1 en particular tenga dos tipografías y tamaños diferentes, voy a envolver esas
                 partes en un span y le voy a asignar clases para poder agregar estilos de forma particular. -->
                 <h1 class="section-presentacion-titulo"><span class="titulo-decorativo">Tradición</span><span class="titulo-outline">y madera
@@ -45,67 +45,77 @@
             </div>
         </section>
 
-        <section class="section-caracteristicas">
-            <div class="section-caracteristicas-contenedor">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#dab075">
-                        <path
-                            d="M295.33-80v-152.67H0l177.33-262.66h-88L360-880l120 170.67L600-880l270.67 384.67h-87.34L960-232.67H665.33V-80h-130v-152.67h-110V-80h-130Zm381-219.33h158.34L657-562h81.67L600-759.33 523-649l107.67 153.67h-87.34l133 196Zm-550.33 0h468.67L417-562h81.67L360-759.33 221.33-562h82.34L126-299.33Zm0 0h177.67-82.34 277.34H417h177.67H126Zm550.33 0h-133 87.34H523h215.67H657h177.67-158.34Zm-141 66.66h130-130Zm185.67 0Z" />
-                    </svg>
-                    <div class="section-caracteristicas-titulo">
-                        <h2>Madera seleccionada</h2>
-                        <p class="section-caracteristicas-descripcion-1">Trabajamos con nogal, roble, caoba, cerezo,
-                            ébano, lapacho y
-                            teca, seleccionados acorde a las características y necesidades de cada pieza.</p>
-                    </div>
-
+        <section class="section-caracteristicas-contenedor">
+            <div class="section-caracteristicas-contenido">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M295.33-80v-152.67H0l177.33-262.66h-88L360-880l120 170.67L600-880l270.67 384.67h-87.34L960-232.67H665.33V-80h-130v-152.67h-110V-80h-130Zm381-219.33h158.34L657-562h81.67L600-759.33 523-649l107.67 153.67h-87.34l133 196Zm-550.33 0h468.67L417-562h81.67L360-759.33 221.33-562h82.34L126-299.33Zm0 0h177.67-82.34 277.34H417h177.67H126Zm550.33 0h-133 87.34H523h215.67H657h177.67-158.34Zm-141 66.66h130-130Zm185.67 0Z" />
+                </svg>
+                <div class="section-caracteristica">
+                    <h2>Madera seleccionada</h2>
+                    <p class="section-caracteristica-descripcion">Trabajamos con nogal, roble, caoba, cerezo,
+                        ébano, lapacho y teca, seleccionados acorde a las necesidades de cada obra.</p>
                 </div>
+            </div>
 
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#dab075">
-                        <path
-                            d="M202.67-120q-34.34 0-58.5-24.17Q120-168.33 120-202.67v-542q0-34.33 32-47.5 32-13.16 56.67 11.5l60 60-46 46L250-647.33l46-46 112.67 112.66-46 46L390-507.33l46-46L549.33-440l-46 46 27.34 27.33 46-46L689.33-300l-46 46 27.34 27.33 46-46L773.33-216q26.67 26.67 12.84 61.33Q772.33-120 736-120H202.67Zm10.66-93.33h419.34L213.33-632.67v419.34Z" />
-                    </svg>
+
+            <div class="section-caracteristicas-contenido">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M202.67-120q-34.34 0-58.5-24.17Q120-168.33 120-202.67v-542q0-34.33 32-47.5 32-13.16 56.67 11.5l60 60-46 46L250-647.33l46-46 112.67 112.66-46 46L390-507.33l46-46L549.33-440l-46 46 27.34 27.33 46-46L689.33-300l-46 46 27.34 27.33 46-46L773.33-216q26.67 26.67 12.84 61.33Q772.33-120 736-120H202.67Zm10.66-93.33h419.34L213.33-632.67v419.34Z" />
+                </svg>
+                <div class="section-caracteristica">
                     <h2>Diseños a medida</h2>
-                    <p class="descripcion-banner-2">Analizamos el espacio, medimos, diseñamos a piachere del cliente y
+                    <p class="section-caracteristica-descripcion">Analizamos el espacio, medimos, diseñamos a piachere del cliente y
                         ejecutamos con la más alta precisión.</p>
                 </div>
+            </div>
 
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#dab075">
-                        <path
-                            d="M616.33-102q-9 9-21.16 14-12.17 5-25.5 5-13.34 0-26-5Q531-93 522-102l-71.33-70.67q-9-9-13.84-20.16Q432-204 431-216q-1-12 2.83-23.33 3.84-11.34 11.5-22L458-278 123.33-752.67 270.67-900l525 524.33q9.66 9.67 14.66 21.84 5 12.16 5 24.83 0 12.67-5 25.33-5 12.67-14.66 22.34L616.33-102Zm-110-223L628-447 270.67-805.67 210-745l296.33 420ZM569-149l179.67-179.67L676-401 496.67-221 569-149Zm-62.67-176L628-447 506.33-325Z" />
-                    </svg>
+            <div class="section-caracteristicas-contenido">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M616.33-102q-9 9-21.16 14-12.17 5-25.5 5-13.34 0-26-5Q531-93 522-102l-71.33-70.67q-9-9-13.84-20.16Q432-204 431-216q-1-12 2.83-23.33 3.84-11.34 11.5-22L458-278 123.33-752.67 270.67-900l525 524.33q9.66 9.67 14.66 21.84 5 12.16 5 24.83 0 12.67-5 25.33-5 12.67-14.66 22.34L616.33-102Zm-110-223L628-447 270.67-805.67 210-745l296.33 420ZM569-149l179.67-179.67L676-401 496.67-221 569-149Zm-62.67-176L628-447 506.33-325Z" />
+                </svg>
+                <div class="section-caracteristica">
                     <h2>Acabados impecables</h2>
-                    <p class="descripcion-banner-2">Obras de marquetería y taracea por expertos.</p>
+                    <p class="section-caracteristica-descripcion">Obras de marquetería y taracea hechas por expertos, con el detalle y cuidado que
+                        cada pieza merece.</p>
                 </div>
+            </div>
 
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#dab075">
-                        <path
-                            d="M236-330.67q-30.53 0-52.26-21.97Q162-374.62 162-405.48q0-30.85 21.74-52.69Q205.47-480 236-480q31.07 0 53.2 21.97 22.13 21.98 22.13 52.84 0 30.86-22.13 52.69T236-330.67Zm487.33 0q-31.07 0-53.2-21.97Q648-374.62 648-405.48q0-30.85 22.13-52.69Q692.26-480 723.33-480q30.53 0 52.27 21.97 21.73 21.98 21.73 52.84 0 30.86-21.73 52.69-21.74 21.83-52.27 21.83ZM480-372q-39.33 0-67-27.67-27.67-27.66-27.67-67 0-39.33 27.67-67 27.67-27.66 67-27.66t67 27.66q27.67 27.67 27.67 67 0 39.34-27.67 67Q519.33-372 480-372ZM286.67-120.67q14-67 67.7-111.83T480-277.33q71.93 0 125.63 44.83 53.7 44.83 67.7 111.83H286.67Zm-206.67 0q0-65.33 45.82-111 45.83-45.66 110.18-45.66 21 0 40.33 5 19.34 5 36 15-28 26.95-46.66 61.81Q247-160.67 240-120.67H80Zm640 0q-7-40-25.67-74.85-18.66-34.86-46.66-61.81 16.66-9.34 35.66-14.67 19-5.33 40-5.33 64.63 0 110.65 45.66Q880-186 880-120.67H720ZM80-493.33 40-546l440-334 171.33 130v-91.33h108v173.6L920-546l-40 52.67-400-302.34L80-493.33Z" />
-                    </svg>
+            <div class="section-caracteristicas-contenido">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M236-330.67q-30.53 0-52.26-21.97Q162-374.62 162-405.48q0-30.85 21.74-52.69Q205.47-480 236-480q31.07 0 53.2 21.97 22.13 21.98 22.13 52.84 0 30.86-22.13 52.69T236-330.67Zm487.33 0q-31.07 0-53.2-21.97Q648-374.62 648-405.48q0-30.85 22.13-52.69Q692.26-480 723.33-480q30.53 0 52.27 21.97 21.73 21.98 21.73 52.84 0 30.86-21.73 52.69-21.74 21.83-52.27 21.83ZM480-372q-39.33 0-67-27.67-27.67-27.66-27.67-67 0-39.33 27.67-67 27.67-27.66 67-27.66t67 27.66q27.67 27.67 27.67 67 0 39.34-27.67 67Q519.33-372 480-372ZM286.67-120.67q14-67 67.7-111.83T480-277.33q71.93 0 125.63 44.83 53.7 44.83 67.7 111.83H286.67Zm-206.67 0q0-65.33 45.82-111 45.83-45.66 110.18-45.66 21 0 40.33 5 19.34 5 36 15-28 26.95-46.66 61.81Q247-160.67 240-120.67H80Zm640 0q-7-40-25.67-74.85-18.66-34.86-46.66-61.81 16.66-9.34 35.66-14.67 19-5.33 40-5.33 64.63 0 110.65 45.66Q880-186 880-120.67H720ZM80-493.33 40-546l440-334 171.33 130v-91.33h108v173.6L920-546l-40 52.67-400-302.34L80-493.33Z" />
+                </svg>
+                <div class="section-caracteristica">
                     <h2>Compromiso y experiencia</h2>
-                    <p class="descripcion-banner-2">Más de 30 años de experiencia en la industria del mueble y la
+                    <p class="section-caracteristica-descripcion">Más de 30 años de experiencia en la industria del mueble y la
                         ebanistería.
                         Garantía de por vida.</p>
                 </div>
             </div>
         </section>
+        <section class="section-producto-semanal-contenedor">
+            <div class="section-producto-semanal-contenido">
 
-        <section class="section-producto-semanal">
-            <div class="section-producto-semanal-contenedor">
-                <h3>Producto de la semana</h3>
-                <img src="./assets/images/backgrounds/banner-1.jpg"
-                    alt="Imagen de una mesa de comedor clásica estilo Luis XV, de madera maciza, con patas curvas y detalles ornamentales tallados.">
-                <p>Mesa Natalia</p>
-                <a href="./pages/producto-27-09-2026.html"><button>Ver más detalles</button></a>
-                <img src="./assets/images/decorative/deco-1.png" alt="Imagen decorativa de un león heráldico.">
+                <img class="producto-semanal-imagen" src="./assets/images/muebles/mueble-00041.jpg"
+                    alt="Mesa de comedor redonda de caoba con pedestal central, tablero con marquetería y patas curvas con herrajes de bronce.">
+                <div class="producto-semanal-texto">
+                    <span class="producto-semanal-titulo">Producto de la semana</span>
+                    <h3>Mesa Natalia</h3>
+                    <p>Mesa de comedor redonda extensible, de estilo clásico georgiano. Tablero lustrado con marquetería de caoba y moldura redondeada
+                        en el canto, columna central con relieves y cuatro patas curvas en forma de sable con herrajes de bronce. Se extiende con un
+                        sistema de poleas que se abre al medio e inserta las tablas guardadas debajo.
+                    </p>
+                    <a href="./pages/producto-27-09-2026.html"><button>Ver más detalles</button></a>
+                </div>
+                <img class="producto-semanal-deco" src="./assets/images/decorative/deco-1.png" alt="Imagen decorativa de un león heráldico.">
             </div>
         </section>
 
-        <section class="section-taller">
-            <div class="section-taller-contenedor">
+        <section class="section-taller-contenedor">
+            <div class="section-taller-contenido">
                 <h3>El taller</h3>
                 <p>Lo que alguna vez fue el conventillo de los inmigrantes italianos Caterina Moreschi y Giovanni Enrico
                     Tolotti, con el tiempo se transformó en el taller de carpintería de sus hijos, Francisco y Enrique
