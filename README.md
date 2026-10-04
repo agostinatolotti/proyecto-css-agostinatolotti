@@ -22,5 +22,7 @@ El sitio cuenta con las siguientes secciónes:
 
 Creación del repositorio: 01/10/2026.
 Proyecto trabajado localmente con anterioridad.
+Preentrega 2: Entregado el 04/10/2026
+(Layouts flexibles y espaciado preciso en el portafolio)
 
 Autora: Agostina Tolotti.
