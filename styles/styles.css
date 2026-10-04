@@ -168,7 +168,84 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     letter-spacing: 2px;
 }
 
-/* MAIN */
+/* FOOTER */
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--color-2-arce);
+    border-top: 1px solid var(--color-3-roble);
+}
+
+.footer-contenedor {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    gap: 1rem;
+    color: var(--color-2-arce);
+}
+
+.footer-info p {
+    font-size: 1rem;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-isotipo {
+    height: 4.5rem;
+}
+
+.footer-imagotipo {
+    height: 2.5rem;
+}
+
+.footer-redes {
+    display: flex;
+    fill: var(--color-3-roble);
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-redes svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer-eslogan p {
+    font-family: var(--tipografia-titulos);
+    font-size: 1.5rem;
+
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-4-nogal);
+    padding: 0.6rem;
+    color: var(--color-2-arce);
+
+}
+
+.footer-bottom p {
+
+    font-family: var(--tipografia-cuerpo-italic);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* INDEX: MAIN */
 
 /* MAIN: PRESENTACIÓN */
 
@@ -220,7 +297,7 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     background-color: var(--color-2-arce);
     display: flex;
     justify-content: space-between;
-    padding: 2rem 4rem;
+    padding: 1.8rem 4rem;
     color: var(--color-4-nogal);
     gap: 5rem;
 }
@@ -228,8 +305,7 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 .section-caracteristicas-contenido {
     display: flex;
     flex: 1;
-    gap: 1rem;
-    padding: 0.5rem;
+    gap: 1.5rem;
     align-items: flex-start;
 }
 
@@ -240,7 +316,6 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 
 .section-caracteristicas-contenedor p {
     font-size: 0.8rem;
-    padding: 0.5rem 0;
 }
 
 /* Acá agregué el parametro de flex-shrink 0 porque se me estaban quedando chiquitos los iconos y no encontraba manera de solucionarlo. */
@@ -315,9 +390,9 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 
 .section-taller-contenedor {
     display: flex;
-    background-color: var(--color-4-nogal);
+    background-color: var(--color-5-ebano);
     color: var(--color-2-arce);
-    padding: 2rem 2rem;
+    padding: 4rem 6rem;
     align-items: center;
     gap: 4%;
 }
@@ -329,7 +404,6 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     flex-grow: 0;
     flex-basis: 35%;
     gap: 1.25rem;
-    padding: 2rem 3rem;
 }
 
 .section-taller-contenido h3 {
@@ -378,3 +452,4 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     flex-basis: 0;
     min-width: 0;
 }
+
