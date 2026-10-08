@@ -1,4 +1,4 @@
-/* RESTRABLECIMIENTO DE ESTILOS */
+/* RESTABLECIMIENTO DE ESTILOS */
 * {
     margin: 0;
     padding: 0;
@@ -439,19 +439,24 @@ img {
 
 .section-nosotros-contenedor {
     display: flex;
-    padding: 2rem 20rem;
-    max-width: 100%;
-    gap: 6rem;
-    margin-left: -2rem;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.section-nosotros-invertida {
+    flex-direction: column;
 }
 
 .section-nosotros-firma {
-    width: 80%;
+    width: 55%;
     padding-bottom: 2rem;
 }
 
 .section-nosotros-imagen {
-    width: 50%;
+    width: 100%;
+    max-width: 22rem;
     border: 10px solid var(--color-4-nogal);
 }
 
@@ -462,17 +467,20 @@ img {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-left: -4rem;
 
     .titulo-outline {
+        display: block;
+        margin-left: 0;
+        font-size: clamp(2.5rem, 15vw, 6rem);
         color: var(--color-3-roble);
     }
 }
 
 .section-nosotros-texto h2 {
     text-transform: uppercase;
-    font-size: 7rem;
-    line-height: 0.40;
+    font-size: clamp(3rem, 15vw, 7rem);
+    line-height: 0.50;
+    text-align: center;
 }
 
 /* MAIN NOSOTROS: TRADICIÓN Y MADERA */
@@ -480,13 +488,14 @@ img {
 .section-titulo-contenedor {
     display: flex;
     justify-content: center;
-    padding: 12rem 2rem 0rem 2rem;
+    padding-top: 5rem;
+    padding-bottom: 0;
     color: var(--color-4-nogal);
 }
 
 .section-titulo-contenedor h1 {
     font-family: var(--tipografia-titulos-decorativa);
-    font-size: 12rem;
+    font-size: clamp(3rem, 14vw, 12rem);
     line-height: 0.5;
     display: flex;
     flex-direction: column;
@@ -494,7 +503,8 @@ img {
 }
 
 .section-titulo-contenedor .titulo-outline {
-    font-size: 10rem;
+    margin-left: 1em;
+    font-size: clamp(2.5rem, 12vw, 10rem);
 }
 
 /* MAIN NOSOTROS: LINAJE */
@@ -502,26 +512,24 @@ img {
 .section-linaje-contenedor {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    padding: 0rem 10rem 4rem 10rem;
+    gap: 2rem;
     color: var(--color-3-roble);
 }
 
 .section-linaje-contenedor h2 {
     font-family: var(--tipografia-subtitulos-cursiva);
-    font-size: 3.5rem;
-    position: relative;
-    top: 9rem;
+    font-size: 2.2rem;
 }
 
 .section-linaje-contenedor h3 {
-    align-self: flex-end;
-    font-size: 5.5rem;
+    align-self: flex-start;
+    font-size: clamp(2.2rem, 8vw, 5.5rem);
+    line-height: 1;
     color: var(--color-4-nogal)
 }
 
 .section-linaje-contenedor p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.7;
 }
 
@@ -535,7 +543,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .linaje-arbol img {
@@ -545,18 +553,12 @@ img {
 
 .linaje-origen {
     display: flex;
-    align-items: center;
-    gap: 3rem;
-    padding: 1.25rem;
-}
-
-.linaje-postal,
-.linaje-origen-texto {
-    flex-grow: 1 1 0;
-    min-width: 0;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .linaje-postal {
+    width: 100%;
     height: auto;
     border: 6px solid var(--color-2-arce);
 }
@@ -564,23 +566,20 @@ img {
 .linaje-origen-texto {
     display: flex;
     flex-direction: column;
+    padding-top: 2rem;
 }
 
 .linaje-origen-texto p {
     font-family: var(--tipografia-subtitulos-cursiva);
-    font-size: 2rem;
-    padding-left: 3rem;
-    position: relative;
-    bottom: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .linaje-conventillo {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 4rem;
+    padding: 2rem 1.3rem;
     background-color: var(--color-2-arce);
-    border: 6px solid var(--color-4-nogal);
     color: var(--color-4-nogal);
 }
 
@@ -589,39 +588,162 @@ img {
 }
 
 .linaje-conventillo p {
-    padding: 0 5rem;
     font-family: var(--tipografia-cuerpo-bold);
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 /* MAIN NOSOTROS: GALERIA DE FOTOS */
 
 .linaje-galeria {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 1rem;
 }
 
 .linaje-imagen {
-    height: 20rem;
+    width: 100%;
 }
 
-.linaje-imagen-grande {
-    height: 26rem;
+.linaje-imagen-horizontal {
+    grid-column: span 3;
 }
-
 
 /* MAIN NOSOTROS: ILUSTRACIÓN */
 
 .section-cierre-contenedor {
     display: flex;
     justify-content: center;
-    padding: 4rem 2rem;
 }
 
 .cierre-imagen {
-    flex-basis: 50%;
-    min-width: 0;
+    width: 100%;
+    max-width: 30rem;
     height: auto;
+}
+
+/* MAIN PROYECTOS: INTRO */
+
+.proyectos-intro {
+    background-color: var(--color-4-nogal);
+    color: var(--color-2-arce);
+}
+
+.proyectos-intro h1 {
+    font-family: var(--tipografia-titulos-decorativa);
+    font-size: clamp(3rem, 14vw, 8rem);
+    line-height: 1;
+}
+
+/* MAIN PROYECTOS: TESTIMONIOS */
+
+.proyectos-testimonios {
+    background-color: var(--color-2-arce);
+    color: var(--color-4-nogal);
+}
+
+.testimonios-lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.testimonio {
+    display: grid;
+    grid-template-columns: 6rem 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "avatar opinion"
+        "nombre opinion";
+    align-items: start;
+    gap: 0.5rem 1rem;
+}
+
+.testimonio-invertido {
+    grid-template-columns: 1fr 6rem;
+    grid-template-areas:
+        "opinion avatar"
+        "opinion nombre";
+}
+
+.testimonio-avatar {
+    grid-area: avatar;
+    justify-self: center;
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border: 3px solid var(--color-4-nogal);
+    border-radius: 50%;
+}
+
+.cliente {
+    grid-area: nombre;
+    justify-self: center;
+    color: var(--color-4-nogal);
+}
+
+.opinion {
+    grid-area: opinion;
+    font-family: var(--tipografia-cuerpo-italic);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* MAIN PROYECTOS: GALERÍAS */
+
+.proyectos-galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--color-1-abedul);
+    color: var(--color-4-nogal);
+}
+
+.proyectos-galeria h2,
+.proyectos-living h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.galeria-grilla {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.galeria-imagen {
+    width: 100%;
+}
+
+/* MAIN PROYECTOS: JUEGOS DE LIVING */
+
+.proyectos-living {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    background-color: var(--color-5-ebano);
+    color: var(--color-2-arce);
+}
+
+.living-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "imagen"
+        "texto";
+    gap: 1rem;
+}
+
+.living-imagen {
+    grid-area: imagen;
+    width: 100%;
+}
+
+.living-descripcion {
+    grid-area: texto;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
 }
