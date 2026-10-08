@@ -660,13 +660,6 @@ img {
     gap: 0.5rem 1rem;
 }
 
-.testimonio-invertido {
-    grid-template-columns: 1fr 6rem;
-    grid-template-areas:
-        "opinion avatar"
-        "opinion nombre";
-}
-
 .testimonio-avatar {
     grid-area: avatar;
     justify-self: center;
@@ -890,6 +883,23 @@ img {
 
 /* MEDIA QUERYS */
 
+/* SOLO EN CELULAR */
+
+/* Agregué este max-width para después no tener que rehacer el tema de
+los testimonios, me pareció más lógico ya que es la única excepción. */
+
+@media (max-width: 767px) {
+
+    /* MAIN PROYECTOS */
+
+    .testimonio-invertido {
+        grid-template-columns: 1fr 6rem;
+        grid-template-areas:
+            "opinion avatar"
+            "opinion nombre";
+    }
+}
+
 /* TABLET */
 
 @media (min-width: 768px) {
@@ -911,14 +921,30 @@ img {
     /* FOOTER */
 
     .footer-top {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-areas:
+            "logos info redes"
+            "eslogan eslogan eslogan";
         justify-content: space-around;
+        align-items: center;
         padding: 2rem 3rem;
     }
 
+    .footer-logos {
+        grid-area: logos;
+    }
+
+    .footer-contenedor {
+        grid-area: info;
+    }
+
+    .footer-redes {
+        grid-area: redes;
+    }
+
     .footer-eslogan {
-        width: 100%;
+        grid-area: eslogan;
     }
 
     /* MAIN INICIO */
@@ -940,12 +966,7 @@ img {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .testimonio-invertido {
-        grid-template-columns: 6rem 1fr;
-        grid-template-areas:
-            "avatar opinion"
-            "nombre opinion";
-    }
+    /* MAIN PROYECTOS */
 
     .galeria-grilla {
         grid-template-columns: repeat(6, 1fr);
@@ -1070,12 +1091,9 @@ img {
     /* FOOTER */
 
     .footer-top {
-        flex-wrap: nowrap;
+        grid-template-columns: repeat(4, auto);
+        grid-template-areas: "logos info redes eslogan";
         padding: 2rem 6rem;
-    }
-
-    .footer-eslogan {
-        width: auto;
     }
 
     .footer-eslogan p {
@@ -1131,15 +1149,12 @@ img {
         max-width: 60%;
     }
 
-    /* MAIN PROYECTOS */
-
     .testimonios-lista {
         grid-template-columns: repeat(4, 1fr);
         gap: 3rem;
     }
 
-    .testimonio,
-    .testimonio-invertido {
+    .testimonio {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas:
@@ -1188,18 +1203,6 @@ img {
             "cierre cierre";
     }
 
-    .section-titulo-contenedor {
-        grid-area: titulo;
-    }
-
-    .section-linaje-contenedor {
-        grid-area: linaje;
-    }
-
-    .section-cierre-contenedor {
-        grid-area: cierre;
-    }
-
     .section-nosotros-contenedor {
         grid-area: francisco;
         gap: 1.5rem;
@@ -1226,10 +1229,12 @@ img {
     }
 
     .section-titulo-contenedor {
+        grid-area: titulo;
         padding-top: 8rem;
     }
 
     .section-linaje-contenedor {
+        grid-area: linaje;
         gap: 3rem;
         padding: 0 6rem 4rem;
     }
@@ -1260,6 +1265,10 @@ img {
 
     .linaje-galeria {
         gap: 2rem;
+    }
+
+    .section-cierre-contenedor {
+        grid-area: cierre;
     }
 
     .cierre-imagen {
