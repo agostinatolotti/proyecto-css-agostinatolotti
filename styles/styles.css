@@ -105,7 +105,9 @@ p {
     font-size: 1.25rem;
 }
 
-button {
+button,
+.boton {
+    display: inline-block;
     background-color: var(--color-2-arce);
     color: var(--color-4-nogal);
     font-family: var(--tipografia-cuerpo-regular);
