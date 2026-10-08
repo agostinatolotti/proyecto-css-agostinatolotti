@@ -26,6 +26,7 @@ Proyecto trabajado localmente con anterioridad.
 Preentrega 2: Entregado el 04/10/2026
 (Layouts flexibles y espaciado preciso en el portafolio)
 
-Preentrega 3: -
+Preentrega 3: Entregado el 08/10/2026
+(Maquetación con CSS Grid y Media Queries)
 
 Autora: Agostina Tolotti.

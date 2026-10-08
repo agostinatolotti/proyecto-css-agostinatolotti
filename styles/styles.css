@@ -485,6 +485,7 @@ img {
 /* MAIN NOSOTROS: TRADICIÓN Y MADERA */
 
 .section-titulo-contenedor {
+    background-color: var(--color-2-arce);
     display: flex;
     justify-content: center;
     padding-top: 5rem;
@@ -884,4 +885,384 @@ img {
 
 .producto a {
     align-self: center;
+}
+
+
+/* MEDIA QUERYS */
+
+/* TABLET */
+
+@media (min-width: 768px) {
+
+    /* GENERALES */
+
+    .section-contenedor {
+        padding: 4rem 3rem;
+    }
+
+    /* HEADER */
+
+    .header-contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    /* FOOTER */
+
+    .footer-top {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2rem 3rem;
+    }
+
+    .footer-eslogan {
+        width: 100%;
+    }
+
+    /* MAIN INICIO */
+
+    .section-caracteristicas-contenedor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 3rem;
+        padding: 2rem 3rem;
+    }
+
+    .section-producto-semanal-contenedor {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "imagen texto";
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .taller-galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonio-invertido {
+        grid-template-columns: 6rem 1fr;
+        grid-template-areas:
+            "avatar opinion"
+            "nombre opinion";
+    }
+
+    .galeria-grilla {
+        grid-template-columns: repeat(6, 1fr);
+        align-items: start;
+    }
+
+    .galeria-imagen {
+        grid-column: span 2;
+    }
+
+    .galeria-imagen-centrada {
+        grid-column: 2 / 4;
+    }
+
+    .galeria-imagen-alineada {
+        height: 37vw;
+        object-fit: cover;
+    }
+
+    .living-item {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "imagen texto";
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .living-item-invertido {
+        grid-template-areas: "texto imagen";
+    }
+
+    /* MAIN NOSOTROS */
+
+    .section-nosotros-contenedor,
+    .section-nosotros-invertida {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .section-nosotros-imagen {
+        width: 50%;
+    }
+
+    .section-nosotros-texto {
+        flex: 1;
+    }
+
+    .section-nosotros-firma {
+        width: 80%;
+    }
+
+    .section-nosotros-texto h2 {
+        font-size: 4rem;
+    }
+
+    .section-nosotros-texto .titulo-outline {
+        font-size: 3.5rem;
+    }
+
+    .section-linaje-contenedor h2 {
+        font-size: 3rem;
+    }
+
+    .linaje-origen {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .linaje-postal {
+        width: 60%;
+    }
+
+    .linaje-origen-texto {
+        padding-top: 0;
+    }
+
+    .linaje-conventillo {
+        padding: 3rem;
+    }
+
+    .linaje-galeria {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .linaje-imagen {
+        grid-column: span 2;
+    }
+
+    .linaje-imagen-horizontal {
+        grid-column: span 3;
+    }
+
+    .linaje-imagen-centrada {
+        grid-column: 2 / 6;
+    }
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+
+    /* GENERALES */
+
+    .section-contenedor {
+        padding: 4rem 6rem;
+    }
+
+    /* HEADER */
+
+    .header-logo {
+        width: 10rem;
+    }
+
+    .header-nav {
+        gap: 2rem;
+    }
+
+    .header-nav a {
+        font-size: 1.2rem;
+    }
+
+    /* FOOTER */
+
+    .footer-top {
+        flex-wrap: nowrap;
+        padding: 2rem 6rem;
+    }
+
+    .footer-eslogan {
+        width: auto;
+    }
+
+    .footer-eslogan p {
+        font-size: 1.5rem;
+    }
+
+    /* MAIN INICIO */
+
+    .section-presentacion-descripcion {
+        max-width: 50%;
+    }
+
+    .section-caracteristicas-contenedor {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        padding: 2rem 3rem;
+    }
+
+    .section-caracteristicas-contenido {
+        gap: 1rem;
+    }
+
+    .section-producto-semanal-contenedor {
+        grid-template-columns: 3fr 4fr 1fr;
+        grid-template-areas: "imagen texto deco";
+        gap: 4rem;
+    }
+
+    .producto-semanal-deco {
+        display: block;
+        width: 100%;
+    }
+
+    .section-taller-contenedor {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "contenido galeria";
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .section-taller-contenido {
+        grid-area: contenido;
+    }
+
+    .taller-galeria {
+        grid-area: galeria;
+    }
+
+    /* MAIN PROYECTOS */
+
+    .proyectos-intro p {
+        max-width: 60%;
+    }
+
+    /* MAIN PROYECTOS */
+
+    .testimonios-lista {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .testimonio,
+    .testimonio-invertido {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "avatar"
+            "nombre"
+            "opinion";
+        align-content: start;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .proyectos-living {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        gap: 3rem 2rem;
+    }
+
+    .proyectos-living h2 {
+        grid-column: span 3;
+    }
+
+    .living-item,
+    .living-item-invertido {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "imagen"
+            "texto";
+        gap: 1.5rem;
+    }
+
+    .living-imagen {
+        height: 28vw;
+        object-fit: cover;
+    }
+
+    /* MAIN NOSOTROS */
+
+    .main-nosotros {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "francisco enrique"
+            "titulo titulo"
+            "linaje linaje"
+            "cierre cierre";
+    }
+
+    .section-titulo-contenedor {
+        grid-area: titulo;
+    }
+
+    .section-linaje-contenedor {
+        grid-area: linaje;
+    }
+
+    .section-cierre-contenedor {
+        grid-area: cierre;
+    }
+
+    .section-nosotros-contenedor {
+        grid-area: francisco;
+        gap: 1.5rem;
+        padding: 4rem 2rem;
+    }
+
+    .section-nosotros-invertida {
+        grid-area: enrique;
+    }
+
+    .section-nosotros-imagen {
+        height: clamp(20rem, 33vw, 30rem);
+        object-fit: cover;
+    }
+
+    .section-nosotros-texto h2 {
+        font-size: clamp(2.5rem, 4vw, 4rem);
+        text-align: left;
+    }
+
+    .section-nosotros-texto .titulo-outline {
+        margin-left: 0.5em;
+        font-size: clamp(2rem, 3.5vw, 3.5rem);
+    }
+
+    .section-titulo-contenedor {
+        padding-top: 8rem;
+    }
+
+    .section-linaje-contenedor {
+        gap: 3rem;
+        padding: 0 6rem 4rem;
+    }
+
+    .section-linaje-contenedor h2 {
+        position: relative;
+        top: 7rem;
+        font-size: 2.5rem;
+    }
+
+    .linaje-arbol h3 {
+        align-self: flex-end;
+        font-size: 4rem;
+    }
+
+    .linaje-origen-texto p {
+        padding-left: 3rem;
+    }
+
+    .linaje-conventillo {
+        padding: 4rem;
+    }
+
+    .linaje-conventillo p {
+        padding: 0 5rem;
+        font-size: 1.3rem;
+    }
+
+    .linaje-galeria {
+        gap: 2rem;
+    }
+
+    .cierre-imagen {
+        max-width: 45rem;
+    }
 }
