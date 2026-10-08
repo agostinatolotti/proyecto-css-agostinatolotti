@@ -1,5 +1,4 @@
-/* Restablecimiento de estilos por defecto */
-
+/* RESTRABLECIMIENTO DE ESTILOS */
 * {
     margin: 0;
     padding: 0;
@@ -8,10 +7,10 @@
     text-decoration: none;
 }
 
-/* Ruta a las tipografías */
+/* RUTA A LAS TIPOGRAFÍAS */
 
 @font-face {
-    font-family: "Athelas Regular";
+    font-family: 'Athelas Regular';
     src: url("../assets/fonts/athelas-regular.ttf");
     font-weight: 400;
     font-style: normal;
@@ -58,13 +57,12 @@
     src: url("../assets/fonts/waymar-ornate.ttf");
 }
 
-/* Variables CSS */
+/* VARIABLES DE CSS */
 
 :root {
 
-    /* Paletas de colores */
+    /* PALETA DE COLORES */
 
-    /* Color 1 solo para identificar texto sin estilizar o casos excepcionales */
     --color-1-abedul: #ebe7df;
     --color-2-arce: #dbccaf;
     --color-3-roble: #dab075;
@@ -72,7 +70,7 @@
     --color-5-ebano: #15110f;
 
 
-    /* Tipografías */
+    /* TIPOGRAFÍAS */
 
     --tipografia-logo: 'Waymar Regular', sans-serif;
     --tipografia-titulos: 'Waymar Regular', sans-serif;
@@ -86,14 +84,19 @@
 
 }
 
-/* Personalización de estilos GENERALES*/
+/* ESTILOS GENERALES */
 
 body {
     background-color: var(--color-5-ebano);
     color: var(--color-1-abedul);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--tipografia-titulos);
     font-size: 2.5rem;
 }
@@ -110,40 +113,90 @@ button {
     text-transform: uppercase;
     font-size: 1rem;
     border: none;
-    padding: 14px 26px;
-    letter-spacing: 1px;
+    padding: 0.9rem 1.6rem;
+    letter-spacing: 0.06em;
+/* A partir de acá y en adelante también revisé cómo estaba usando el tema de los tamaños
+porque hice una mescolanza medio rara y también los ajusté mejor según su utilidad,
+en especial aplicando más vviewport que no lo venía entendiendo tanto antes. */
 }
 
-/* Personalización de estilos del HEADER */
+img {
+    max-width: 100%;
+    height: auto;
+    /* Según lo que vimos en la última clase también apliqué esto directamente para todas las imagenes. */
+}
+
+/* CLASES REUTILIZABLES */
+
+/* Acá me fijé que podía optimizar mejor porque al principio fuí haciendo el diseño sobre la marcha, poniendo cada clase de forma única
+(o sea me estaba costando repetir las clases y habían varias que estaban de más), así que unifiqué lo más que pude. */
+
+.section-contenedor {
+    padding: 3rem 1.5rem;
+}
+
+.section-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.section-contenido h4 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.section-contenido p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.cuerpo-destacado {
+    font-family: var(--tipografia-cuerpo-regular);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-3-roble);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid var(--color-3-roble);
+    color: var(--color-3-roble);
+}
+
+/* HEADER */
 
 .header-contenedor {
-    background-color: var(--color-5-ebano);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem 2rem;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-5-ebano);
 }
 
 .header-logo {
-    width: 10rem;
+    width: 8rem;
     height: auto;
 }
 
 .header-nav {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
     list-style: none;
 }
 
 .header-nav a {
-    color: var(--color-2-arce);
     font-family: var(--tipografia-cuerpo-regular);
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-transform: uppercase;
+    color: var(--color-2-arce);
 }
-
-/* Quería agregarle algún tipo de señalador a la página en la que uno esté posicionado y le pedí a Ticher que me oriente para ponerle tres puntitos como diferenciador.
-Así que aprendí lo que son los pseudoelementos y en particular el que me servía a mí "::after", y las propiedades de letter-spacing, transform y translateX. */
 
 .header-nav a.active {
     color: var(--color-3-roble);
@@ -153,43 +206,30 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 .header-nav a.active::after {
     content: "•••";
     position: absolute;
-    bottom: -6px;
+    bottom: -0.4rem;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
 }
 
 /* FOOTER */
 
 .footer-top {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
     color: var(--color-2-arce);
     border-top: 1px solid var(--color-3-roble);
 }
 
-.footer-contenedor {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.footer-info {
-    display: flex;
-    align-items: center;
-    padding: 0.2rem;
-    gap: 1rem;
-    color: var(--color-2-arce);
-}
-
-.footer-info p {
-    font-size: 1rem;
-}
-
 .footer-logos {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
 }
@@ -202,11 +242,28 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     height: 2.5rem;
 }
 
+.footer-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-2-arce);
+}
+
+.footer-info p {
+    font-size: 1rem;
+}
+
 .footer-redes {
     display: flex;
-    fill: var(--color-3-roble);
-    gap: 1.5rem;
     align-items: center;
+    gap: 1.5rem;
+    fill: var(--color-3-roble);
 }
 
 .footer-redes svg {
@@ -216,22 +273,22 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 
 .footer-eslogan p {
     font-family: var(--tipografia-titulos);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .footer-bottom {
     display: flex;
     justify-content: center;
+    padding: 0.6rem 1rem;
+    text-align: center;
     background-color: var(--color-4-nogal);
-    padding: 0.6rem;
     color: var(--color-2-arce);
 }
 
 .footer-bottom p {
-
     font-family: var(--tipografia-cuerpo-italic);
     font-size: 0.7rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
@@ -240,19 +297,16 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 /* MAIN INICIO: PRESENTACIÓN */
 
 .section-presentacion-contenedor {
-    /* La idea es en un futuro conseguir una imagen oscura en la que se pueda ver bien el texto. Pero todavía no encontré ninguna que me guste mucho, por eso pongo un color similar de fondo. */
     background-color: var(--color-4-nogal);
-    padding: 4rem 2rem;
     color: var(--color-2-arce);
 }
 
 .section-presentacion-contenido {
-    max-width: 50%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
     gap: 1.5rem;
+    text-align: left;
 }
 
 .section-presentacion-contenido h1 {
@@ -260,7 +314,7 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     flex-direction: column;
     gap: 0.5rem;
     font-family: var(--tipografia-titulos-decorativa);
-    font-size: 8rem;
+    font-size: clamp(3rem, 12vw, 8rem);
     line-height: 0.5;
 }
 
@@ -269,33 +323,35 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     font-size: 6rem;
     margin-left: 9rem;
     line-height: 1;
-    /* En la pantalla de mi ipad se partía el texto en dos líneas, así que momentaneamente encontré esta solución. */
     white-space: nowrap;
+}
+
+.section-presentacion-contenido .titulo-outline {
+    margin-left: 1.5em;
+    font-size: clamp(2.25rem, 9vw, 6rem);
 }
 
 .section-presentacion-descripcion {
     font-family: var(--tipografia-cuerpo-regular);
     font-size: 1rem;
-    margin-left: 1rem;
     line-height: 1.5;
 }
 
 /* MAIN INICIO: CARACTERÍSTICAS */
 
 .section-caracteristicas-contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
     background-color: var(--color-2-arce);
-    display: flex;
-    justify-content: space-between;
-    padding: 1.8rem 4rem;
     color: var(--color-4-nogal);
-    gap: 5rem;
 }
 
 .section-caracteristicas-contenido {
     display: flex;
-    flex: 1;
-    gap: 1.5rem;
     align-items: flex-start;
+    gap: 1.5rem;
 }
 
 .section-caracteristicas-contenedor h2 {
@@ -307,137 +363,70 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     font-size: 0.8rem;
 }
 
-/* Acá agregué el parametro de flex-shrink 0 porque se me estaban quedando chiquitos los iconos y no encontraba manera de solucionarlo. */
 .section-caracteristicas-contenido svg {
     align-self: center;
-    height: 50px;
     flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
     fill: var(--color-4-nogal);
 }
 
 /* MAIN INICIO: PRODUCTO SEMANAL */
 
 .section-producto-semanal-contenedor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "imagen"
+        "texto";
+    gap: 2.5rem;
     background-color: var(--color-1-abedul);
-    padding: 4rem;
-    display: flex;
-    align-items: center;
-    gap: 4%;
 }
 
 .producto-semanal-imagen {
-    flex: 0 0 35%;
-    min-width: 0;
-    /* Acá consulté cómo poner un borde más sobresalido de la imagen así me generaba un marco lindo. */
+    grid-area: imagen;
+    width: 100%;
     outline: 4px solid var(--color-2-arce);
     outline-offset: 10px;
 }
 
 .producto-semanal-texto {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
+    grid-area: texto;
     color: var(--color-5-ebano);
 }
 
-.producto-semanal-texto h3 {
-    font-family: var(--tipografia-cuerpo-regular);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-3-roble);
-}
-
-.producto-semanal-texto h4 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-
-.producto-semanal-texto p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.producto-semanal-texto button {
-    /* Acá le agregué el atributo de transparente porque quería tener dos tipos de botones. */
-    background-color: transparent;
-    border: 2px solid var(--color-3-roble);
-    color: var(--color-3-roble);
-}
-
 .producto-semanal-deco {
-    width: 14rem;
-    max-width: 100%;
-    flex-shrink: 0;
+    /* Acá oculté el leoncito para ponerlo en el media query de escritorio. */
+    display: none;
+    grid-area: deco;
+    justify-self: center;
+    width: 9rem;
 }
 
 /* MAIN INICIO: EL TALLER */
 
 .section-taller-contenedor {
     display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
     background-color: var(--color-5-ebano);
     color: var(--color-2-arce);
-    padding: 4rem 6rem;
-    align-items: center;
-    gap: 4%;
-}
-
-.section-taller-contenido {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-grow: 0;
-    flex-basis: 35%;
-    gap: 1.25rem;
-}
-
-.section-taller-contenido h3 {
-    font-family: var(--tipografia-cuerpo-regular);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-3-roble);
-}
-
-.section-taller-contenido h4 {
-    font-size: 2.2rem;
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-
-.section-taller-contenido p {
-    font-size: 1rem;
-    line-height: 1.6;
 }
 
 .taller-direccion {
-    color: var(--color-3-roble);
     font-family: var(--tipografia-subtitulos-cursiva);
-    font-size: 1.7rem;
-}
-
-.section-taller-contenido button {
-    background-color: transparent;
-    border: 2px solid var(--color-3-roble);
+    font-size: 1.4rem;
     color: var(--color-3-roble);
 }
 
 .taller-galeria {
-    display: flex;
-    align-items: flex-start;
-    flex-grow: 1;
-    flex-basis: 0;
-    min-width: 0;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
 }
 
 .taller-imagen {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    min-width: 0;
+    width: 100%;
 }
 
 /* MAIN: NOSOTROS */
@@ -475,7 +464,6 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     gap: 1rem;
     margin-left: -4rem;
 
-    /* Acá decidí anidarlo para solamente a estos span poder subirlos un poco de altura. */
     .titulo-outline {
         color: var(--color-3-roble);
     }
@@ -484,8 +472,7 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
 .section-nosotros-texto h2 {
     text-transform: uppercase;
     font-size: 7rem;
-    line-height: 43px;
-
+    line-height: 0.40;
 }
 
 /* MAIN NOSOTROS: TRADICIÓN Y MADERA */
@@ -560,14 +547,12 @@ Así que aprendí lo que son los pseudoelementos y en particular el que me serv�
     display: flex;
     align-items: center;
     gap: 3rem;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 .linaje-postal,
 .linaje-origen-texto {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
+    flex-grow: 1 1 0;
     min-width: 0;
 }
 
