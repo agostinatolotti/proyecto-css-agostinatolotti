@@ -6,7 +6,7 @@ El proyecto es realizado en el marco de aprendizaje de la materia **CSS**, dentr
 
 ## Contenido
 
-El sitio cuenta con las siguientes secciónes:
+El sitio cuenta con las siguientes secciones:
 
 - **Inicio**
 - **Nosotros**
