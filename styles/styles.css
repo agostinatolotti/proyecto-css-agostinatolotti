@@ -375,6 +375,9 @@ img {
 
 .section-presentacion-contenedor {
     background-color: var(--color-4-nogal);
+    background-image: url("../assets/images/banner/banner-1.jpg");
+    background-size: cover;
+    background-position: 30% center;
     color: var(--color-2-arce);
 }
 
@@ -1084,6 +1087,10 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
     }
 
     /* MAIN INICIO */
+
+    .section-presentacion-contenedor {
+        background-position: left center;
+    }
 
     .section-caracteristicas-contenedor {
         grid-template-columns: repeat(2, 1fr);
