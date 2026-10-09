@@ -5,38 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tolotti Ebanistas ⎮ Producto</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
 
 <body>
+    <!-- Navbar de Bootstrap -->
     <header class="header-general">
-        <nav class="header-contenedor">
-
-                    <a href="../index.html">
-                        <img class="header-logo" src="../assets/images/logo/logo-2-negativo.png" alt="Logo de la marca Tolotti Ebanistas">
-                    </a>
-
-                    <ul class="header-nav">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="./nosotros.html">Nosotros</a></li>
-                        <li><a href="./servicios.html">Servicios</a></li>
-                        <li><a href="./proyectos.html">Proyectos</a></li>
-                        <li><a href="./contacto.html">Contacto</a></li>
-                    </ul>
-
+        <nav class="navbar md:navbar-expand">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">
+                    <img class="header-logo" src="../assets/images/logo/logo-2-negativo.png" alt="Logo de la marca Tolotti Ebanistas">
+                </a>
+                <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                </button>
+                <dialog class="drawer drawer-end" tabindex="-1" id="menu-principal" aria-labelledby="menu-principal-titulo">
+                    <div class="drawer-header">
+                        <h5 class="drawer-title" id="menu-principal-titulo">Menú</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="drawer-body">
+                        <ul class="navbar-nav header-nav">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./servicios.html">Servicios</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./proyectos.html">Proyectos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </dialog>
+            </div>
         </nav>
     </header>
+    <!-- Fin del navbar de Bootstrap -->
 
     <main>
         <article class="section-contenedor section-contenido producto">
-        <h1>Producto de la semana</h1>
-        <p>Este es el producto destacado de la semana, disponible para compra inmediata.</p>
-        <p>Disponible del 27 de septiembre al 3 de octubre de 2026.</p>
-        <img class="producto-semanal-imagen" src="../assets/images/muebles/mueble-00039.jpg" alt="Mesa de living victoriana">
-        <p class="cuerpo-destacado producto-estado">Estado: En stock</p>
-        <a href="./contacto.html" class="boton boton-secundario">Reservar</a>
+            <h1>Producto de la semana</h1>
+            <p>Este es el producto destacado de la semana, disponible para compra inmediata.</p>
+            <p>Disponible del 27 de septiembre al 3 de octubre de 2026.</p>
+            <img class="producto-semanal-imagen" src="../assets/images/muebles/mueble-00039.jpg" alt="Mesa de living victoriana">
+            <p class="cuerpo-destacado producto-estado">Estado: En stock</p>
+            <a href="./contacto.html" class="boton boton-secundario">Reservar</a>
         </article>
     </main>
 
@@ -98,6 +111,8 @@
             <p>© 2026 Tolotti Ebanistas. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 </body>
 
 </html>

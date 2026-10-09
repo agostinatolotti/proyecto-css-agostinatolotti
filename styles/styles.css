@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+*::selection {
+    background-color: var(--color-1-abedul);
+}
+
 /* RUTA A LAS TIPOGRAFÍAS */
 
 @font-face {
