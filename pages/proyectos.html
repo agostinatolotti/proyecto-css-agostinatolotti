@@ -127,18 +127,49 @@
         </section>
         <section class="section-contenedor proyectos-galeria">
             <h2>Mobiliario Señorial</h2>
-            <div class="galeria-grilla">
-                <img class="galeria-imagen galeria-imagen-alineada" src="../assets/images/muebles/mueble-00004.jpg"
-                    alt="Biblioteca o vajillero vertical">
-                <img class="galeria-imagen galeria-imagen-alineada" src="../assets/images/muebles/mueble-00005.jpg"
-                    alt="Cajonera moderna con tallados en los cajones superiores">
-                <img class="galeria-imagen galeria-imagen-alineada" src="../assets/images/muebles/mueble-00006.jpg"
-                    alt="Puerta curva doble con marco tallado y vitró transparente">
-                <img class="galeria-imagen galeria-imagen-centrada galeria-imagen-alineada" src="../assets/images/muebles/mueble-00007.jpg"
-                    alt="Pata de mesa tallada como garra de león">
-                <img class="galeria-imagen galeria-imagen-alineada" src="../assets/images/muebles/mueble-00010.jpg"
-                    alt="Mueble de living tipo rack con puertas y cajones">
+            <!-- Carrusel de Bootstrap -->
+            <div id="carrusel-senorial" class="carousel carousel-center slide senorial-galeria" data-bs-autoplay="true" data-bs-interval="3000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00004.jpg" alt="Biblioteca o vajillero vertical">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00005.jpg" alt="Cajonera moderna con tallados en los cajones superiores">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00006.jpg" alt="Puerta curva doble con marco tallado y vitró transparente">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00007.jpg" alt="Pata de mesa tallada como garra de león">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00010.jpg" alt="Mueble de living tipo rack con puertas y cajones">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00008.jpg" alt="Aparador con estantes y paneles tallados">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00028.jpg" alt="Mesa auxiliar redonda con base tallada">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00029.jpg" alt="Biblioteca vitrina de pared completa con columnas talladas">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00034.jpg" alt="Biblioteca abierta con coronación tallada">
+                    </div>
+                </div>
+                <div class="carrusel-controles">
+                    <button class="btn-icon" type="button" data-bs-target="#carrusel-senorial" data-bs-slide="prev">
+                        <span class="carousel-icon-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="btn-icon" type="button" data-bs-target="#carrusel-senorial" data-bs-slide="next">
+                        <span class="carousel-icon-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
             </div>
+            <!-- Fin del carrusel de Bootstrap -->
         </section>
     </main>
 

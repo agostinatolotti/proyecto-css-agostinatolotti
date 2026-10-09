@@ -457,13 +457,13 @@ img {
     width: 100%;
 }
 
-.taller-controles {
+.carrusel-controles {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
 }
 
-.taller-controles button {
+.carrusel-controles button {
     padding: 0.75rem;
     background-color: transparent;
     border: 2px solid var(--color-3-roble);
@@ -753,6 +753,21 @@ img {
     width: 100%;
 }
 
+.senorial-galeria {
+    --bs-carousel-items-gap: 1rem;
+    --bs-carousel-items-peek: 3rem;
+}
+
+.senorial-galeria .carousel-inner {
+    padding: 0 var(--bs-carousel-items-peek);
+}
+
+.senorial-imagen {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
 /* MAIN PROYECTOS: JUEGOS DE LIVING */
 
 .proyectos-living {
@@ -1018,13 +1033,8 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
         grid-column: span 2;
     }
 
-    .galeria-imagen-centrada {
-        grid-column: 2 / 4;
-    }
-
-    .galeria-imagen-alineada {
-        height: 37vw;
-        object-fit: cover;
+    .senorial-galeria {
+        --bs-carousel-items-peek: 30%;
     }
 
     .living-item {
@@ -1193,6 +1203,10 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
 
     .proyectos-intro p {
         max-width: 60%;
+    }
+
+    .senorial-galeria {
+        --bs-carousel-items-peek: 35%;
     }
 
     .testimonios-lista {
