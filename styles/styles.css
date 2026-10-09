@@ -450,13 +450,25 @@ img {
 }
 
 .taller-galeria {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    --bs-carousel-items-gap: 1.5rem;
 }
 
 .taller-imagen {
     width: 100%;
+}
+
+.taller-controles {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.taller-controles button {
+    padding: 0.75rem;
+    background-color: transparent;
+    border: 2px solid var(--color-3-roble);
+    border-radius: 0;
+    color: var(--color-3-roble);
 }
 
 /* MAIN: NOSOTROS */
@@ -992,7 +1004,7 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
     }
 
     .taller-galeria {
-        grid-template-columns: repeat(3, 1fr);
+        --bs-carousel-items: 3;
     }
 
     /* MAIN PROYECTOS */
@@ -1166,6 +1178,11 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
 
     .section-taller-contenido {
         grid-area: contenido;
+    }
+
+    .taller-ciudad {
+        display: block;
+        /* El "Buenos Aires" se me estaba cortando en desktop así que forcé que se vaya a la línea de abajo. */
     }
 
     .taller-galeria {

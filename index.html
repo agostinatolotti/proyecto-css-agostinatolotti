@@ -130,22 +130,45 @@
                     Tolotti. Entre esas mismas paredes comenzó a tomar forma una tradición familiar ligada al trabajo de la madera y al oficio de la
                     ebanistería. Años más tarde, el taller se trasladó a un nuevo espacio en el que
                     hoy se continúan haciendo sueños realidad.</p>
-                <span class="taller-direccion">Av. Córdoba y Mario Bravo, Buenos Aires, Argentina.</span>
+                <span class="taller-direccion">Av. Córdoba y Mario Bravo, <span class="taller-ciudad">Buenos Aires, Argentina.</span></span>
 
                 <a href="./pages/contacto.html" class="boton boton-secundario">Contáctanos</a>
             </div>
 
-            <div class="taller-galeria">
-                <img class="taller-imagen" src="./assets/images/taller/taller-1.jpg" alt="Imagen del taller con herramientas varias.">
-                <img class="taller-imagen" src="./assets/images/taller/taller-2.jpg" alt="Imagen del taller con herramientas y mesas de trabajo.">
-                <img class="taller-imagen" src="./assets/images/taller/taller-3.jpg" alt="Imagen del taller con piezas en proceso.">
-                <!-- Las siguientes imagenes están comentadas para agregar en un futuro cuando esta section se transforme en una galería multimedia scrolleable. -->
-                <!-- <img class="taller-imagen" src="./assets/images/taller/taller-4.jpg" alt="Imagen del taller con virutas de madera en él.">
-                <img class="taller-imagen" src="./assets/images/taller/taller-5.jpg"
-                    alt="Imagen del taller con metros, tablas de madera y muebles terminados al fondo.">
-                <img class="taller-imagen" src="./assets/images/taller/taller-6.jpg"
-                    alt="Imagen del taller con herramientas y virutas sobre el escritorio que tiene un cajón abierto."> -->
+            <!-- Bootstrap -->
+            <div id="carrusel-taller" class="carousel slide taller-galeria">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="taller-imagen" src="./assets/images/taller/taller-1.jpg" alt="Imagen del taller con herramientas varias.">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="taller-imagen" src="./assets/images/taller/taller-2.jpg" alt="Imagen del taller con herramientas y mesas de trabajo.">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="taller-imagen" src="./assets/images/taller/taller-3.jpg" alt="Imagen del taller con piezas en proceso.">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="taller-imagen" src="./assets/images/taller/taller-4.jpg" alt="Imagen del taller con virutas de madera en él.">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="taller-imagen" src="./assets/images/taller/taller-5.jpg" alt="Imagen del taller con metros, tablas de madera y muebles terminados al fondo.">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="taller-imagen" src="./assets/images/taller/taller-6.jpg" alt="Imagen del taller con herramientas y virutas sobre el escritorio que tiene un cajón abierto.">
+                    </div>
+                </div>
+                <div class="taller-controles">
+                    <button class="btn-icon" type="button" data-bs-target="#carrusel-taller" data-bs-slide="prev">
+                        <span class="carousel-icon-prev" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="btn-icon" type="button" data-bs-target="#carrusel-taller" data-bs-slide="next">
+                        <span class="carousel-icon-next" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
             </div>
+            <!-- Bootstrap -->
 
         </section>
     </main>
