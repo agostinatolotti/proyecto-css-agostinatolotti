@@ -801,18 +801,18 @@ img {
     text-transform: uppercase;
 }
 
-.galeria-grilla {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+.joyas-galeria {
+    --bs-carousel-items-gap: 1rem;
 }
 
-.galeria-imagen {
-    width: 100%;
+.joyas-imagen {
+    height: 20rem;
+    width: auto;
+    max-width: none;
     transition: opacity 0.3s;
 }
 
-.galeria-imagen:hover {
+.joyas-imagen:hover {
     opacity: 0.8;
 }
 
@@ -1104,13 +1104,8 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
 
     /* MAIN PROYECTOS */
 
-    .galeria-grilla {
-        grid-template-columns: repeat(6, 1fr);
-        align-items: start;
-    }
-
-    .galeria-imagen {
-        grid-column: span 2;
+    .joyas-imagen {
+        height: 28rem;
     }
 
     .senorial-galeria {
