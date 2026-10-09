@@ -174,13 +174,16 @@ img {
 
 /* HEADER */
 
-.header-contenedor {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: var(--color-5-ebano);
+.header-general .navbar {
+    --bs-navbar-bg: var(--color-5-ebano);
+    /* Acá hice el ícono más grande */
+    --bs-navbar-toggler-icon-size: 2rem;
+    padding: 1rem 0;
+}
+
+.header-general .container-fluid {
+    justify-content: space-between;
+    padding: 0 1rem;
 }
 
 .header-logo {
@@ -188,12 +191,34 @@ img {
     height: auto;
 }
 
+.header-general .navbar-toggler {
+    padding: 0.25rem;
+    background-color: transparent;
+    color: var(--color-2-arce);
+}
+
+.header-general .drawer {
+    --bs-drawer-bg: var(--color-5-ebano);
+    --bs-drawer-color: var(--color-2-arce);
+    flex-grow: 0;
+}
+
+.header-general .drawer-header {
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.header-general .drawer-title {
+    color: var(--color-3-roble);
+}
+
+.header-general .drawer-body {
+    padding-left: 1.5rem;
+}
+
 .header-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem 1.25rem;
-    list-style: none;
+    align-items: flex-start;
+    gap: 1.25rem;
 }
 
 .header-nav a {
@@ -918,10 +943,8 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
 
     /* HEADER */
 
-    .header-contenedor {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 2rem;
+    .header-general .container-fluid {
+        padding: 0 2rem;
     }
 
     /* FOOTER */
