@@ -120,9 +120,30 @@ button,
     border: none;
     padding: 0.9rem 1.6rem;
     letter-spacing: 0.06em;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
     /* A partir de acá y en adelante también revisé cómo estaba usando el tema de los tamaños
 porque hice una mescolanza medio rara y también los ajusté mejor según su utilidad,
 en especial aplicando más viewport que no lo venía entendiendo tanto antes. */
+}
+
+/* Uso button y .boton juntos porque el botón del formulario es un <button>,
+y los demás son links <a> con la clase .boton para que parezcan botones. */
+button:hover,
+button:focus-visible,
+.boton:hover,
+.boton:focus-visible {
+    background-color: var(--color-3-roble);
+}
+
+button:focus-visible,
+.boton:focus-visible {
+    outline: 2px solid var(--color-3-roble);
+    outline-offset: 4px;
+}
+
+button:active,
+.boton:active {
+    transform: scale(0.95);
 }
 
 img {
@@ -172,6 +193,12 @@ img {
     color: var(--color-3-roble);
 }
 
+.boton-secundario:hover,
+.boton-secundario:focus-visible {
+    background-color: var(--color-3-roble);
+    color: var(--color-5-ebano);
+}
+
 /* HEADER */
 
 .header-general .navbar {
@@ -195,6 +222,11 @@ img {
     padding: 0.25rem;
     background-color: transparent;
     color: var(--color-2-arce);
+}
+
+.header-general .navbar-toggler:hover,
+.header-general .navbar-toggler:focus-visible {
+    color: var(--color-3-roble);
 }
 
 .header-general .drawer {
@@ -226,6 +258,21 @@ img {
     font-size: 1rem;
     text-transform: uppercase;
     color: var(--color-2-arce);
+    transition: color 0.3s;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-visible {
+    color: var(--color-3-roble);
+}
+
+.header-nav a:focus-visible {
+    outline: 2px solid var(--color-3-roble);
+    outline-offset: 4px;
+}
+
+.header-nav a:active {
+    color: var(--color-1-abedul);
 }
 
 .header-nav a.active {
@@ -455,6 +502,11 @@ img {
 
 .taller-imagen {
     width: 100%;
+    transition: opacity 0.3s;
+}
+
+.taller-imagen:hover {
+    opacity: 0.8;
 }
 
 .carrusel-controles {
@@ -469,6 +521,12 @@ img {
     border: 2px solid var(--color-3-roble);
     border-radius: 0;
     color: var(--color-3-roble);
+}
+
+.carrusel-controles button:hover,
+.carrusel-controles button:focus-visible {
+    background-color: var(--color-3-roble);
+    color: var(--color-1-abedul);
 }
 
 /* MAIN: NOSOTROS */
@@ -751,6 +809,11 @@ img {
 
 .galeria-imagen {
     width: 100%;
+    transition: opacity 0.3s;
+}
+
+.galeria-imagen:hover {
+    opacity: 0.8;
 }
 
 .senorial-galeria {
@@ -766,6 +829,11 @@ img {
     width: 100%;
     aspect-ratio: 2 / 3;
     object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.senorial-imagen:hover {
+    opacity: 0.8;
 }
 
 /* MAIN PROYECTOS: JUEGOS DE LIVING */
@@ -790,6 +858,11 @@ img {
 .living-imagen {
     grid-area: imagen;
     width: 100%;
+    transition: opacity 0.3s;
+}
+
+.living-imagen:hover {
+    opacity: 0.8;
 }
 
 .living-descripcion {
@@ -858,11 +931,18 @@ img {
     font-family: var(--tipografia-cuerpo-regular);
     font-size: 1rem;
     color: var(--color-4-nogal);
+    transition: border-color 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--color-4-nogal);
+    outline: none;
 }
 
 .formulario textarea {
     min-height: 10rem;
-    /* Busqué ejemplos de formularios y quise agregar este atributo así
+    /* Busqué ejemplos de formularios para referencias de diseño y quise agregar este atributo así
     queda bien prolijo y no se pueda simplemente arrastrar el cambo en horizontal. */
     resize: vertical;
 }
