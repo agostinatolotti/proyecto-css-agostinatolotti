@@ -19,22 +19,17 @@ El sitio cuenta con las siguientes secciones:
 
 - HTML5
 - CSS
-- Bootstrap 6 (versión 6.0.0-alpha.1, por CDN)
+- Bootstrap 5.3 (versión 5.3.8, por CDN)
 
 ## Bootstrap
 
-Elegí usar Bootstrap 6, la última versión, así que hay algunas cosas como el loop de las galerías que no termina de funcionar bien, creo que es por eso. Otra cuestión a tener en cuenta es que cambiaron algunas nomenclaturas y se "homogeneizaron" un poco más con lo que veníamos viendo por suerte:
-
-- El menú desplegable del navbar ahora se llama **drawer** (en Bootstrap 5 era **offcanvas**).
-- Cambian los cortes de pantalla: **md** sigue en 768px, pero **lg** pasa de 992px a 1024px, **xl** de 1200px a 1280px y **xxl** (1400px) pasa a llamarse **2xl** (1536px).
+En la preentrega 4 había usado Bootstrap 6, que todavía está en versión alpha (de prueba). Siguiendo la devolución de la profe, lo migré a Bootstrap 5.3, que es la versión estable que usamos en la cursada.
 
 Componentes y estilos aplicados:
 
-- **Navbar** responsive con menú hamburguesa en todas las páginas, adaptado a la paleta del sitio.
-- **Carruseles** en Inicio (El taller) y en Proyectos (Joyas destacadas, con fotos de ancho variable, y Mobiliario señorial, con las fotos laterales asomadas y avance automático).
+- **Navbar** responsive con menú hamburguesa (collapse) en todas las páginas, adaptado a la paleta del sitio.
+- **Carruseles** en Inicio (El taller) y en Proyectos (Joyas destacadas y Mobiliario señorial). Como Bootstrap 5 pasa de a una diapositiva, armé cada una con varias fotos para mantener el diseño que tenía con la versión anterior. Mobiliario señorial además avanza solo.
 - **Pseudoclases** :hover, :focus y :active con transition en links, botones, controles de los carruseles, imágenes de las galerías y campos del formulario.
-
-Me fijé las diferencias de ambas versiones y preferí usar la nueva para que no me falle ningún componente, y quizás fue contraprocucente, pero todo sirve para aprender. Espero que siga siendo válido.
 
 Creación del repositorio: 01/10/2026.
 Proyecto trabajado localmente con anterioridad.
