@@ -7,6 +7,29 @@
     text-decoration: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote,
+address,
+pre {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
 *::selection {
     background-color: var(--color-1-abedul);
 }
@@ -121,13 +144,8 @@ button,
     padding: 0.9rem 1.6rem;
     letter-spacing: 0.06em;
     transition: background-color 0.3s, color 0.3s, transform 0.2s;
-    /* A partir de acá y en adelante también revisé cómo estaba usando el tema de los tamaños
-porque hice una mescolanza medio rara y también los ajusté mejor según su utilidad,
-en especial aplicando más viewport que no lo venía entendiendo tanto antes. */
 }
 
-/* Uso button y .boton juntos porque el botón del formulario es un <button>,
-y los demás son links <a> con la clase .boton para que parezcan botones. */
 button:hover,
 button:focus-visible,
 .boton:hover,
@@ -149,13 +167,9 @@ button:active,
 img {
     max-width: 100%;
     height: auto;
-    /* Según lo que vimos en la última clase también apliqué esto directamente para todas las imagenes. */
 }
 
 /* CLASES REUTILIZABLES */
-
-/* Acá me fijé que podía optimizar mejor porque al principio fuí haciendo el diseño sobre la marcha, poniendo cada clase de forma única
-(o sea me estaba costando repetir las clases y habían varias que estaban de más), así que unifiqué lo más que pude. */
 
 .section-contenedor {
     padding: 3rem 1.5rem;
@@ -202,9 +216,13 @@ img {
 /* HEADER */
 
 .header-general .navbar {
-    --bs-navbar-bg: var(--color-5-ebano);
-    /* Acá hice el ícono más grande */
-    --bs-navbar-toggler-icon-size: 2rem;
+    --bs-navbar-color: var(--color-2-arce);
+    --bs-navbar-hover-color: var(--color-3-roble);
+    --bs-navbar-active-color: var(--color-3-roble);
+    --bs-navbar-brand-padding-y: 0;
+    --bs-navbar-nav-link-padding-x: 0;
+    --bs-navbar-toggler-focus-width: 0;
+    background-color: var(--color-5-ebano);
     padding: 1rem 0;
 }
 
@@ -221,36 +239,23 @@ img {
 .header-general .navbar-toggler {
     padding: 0.25rem;
     background-color: transparent;
-    color: var(--color-2-arce);
+    border: none;
 }
 
-.header-general .navbar-toggler:hover,
-.header-general .navbar-toggler:focus-visible {
-    color: var(--color-3-roble);
+.header-general .navbar-toggler-icon {
+    width: 2rem;
+    height: 2rem;
 }
 
-.header-general .drawer {
-    --bs-drawer-bg: var(--color-5-ebano);
-    --bs-drawer-color: var(--color-2-arce);
-    flex-grow: 0;
-}
-
-.header-general .drawer-header {
-    justify-content: space-between;
-    padding: 1.5rem;
-}
-
-.header-general .drawer-title {
-    color: var(--color-3-roble);
-}
-
-.header-general .drawer-body {
-    padding-left: 1.5rem;
+.header-general .navbar-collapse {
+    padding-top: 1.5rem;
 }
 
 .header-nav {
+    --bs-nav-link-padding-y: 0;
     align-items: flex-start;
     gap: 1.25rem;
+    margin-left: auto;
 }
 
 .header-nav a {
@@ -500,10 +505,19 @@ img {
 }
 
 .taller-galeria {
-    --bs-carousel-items-gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.taller-fila {
+    display: flex;
+    gap: 1.5rem;
 }
 
 .taller-imagen {
+    flex: 1;
+    min-width: 0;
     width: 100%;
     transition: opacity 0.3s;
 }
@@ -519,7 +533,11 @@ img {
 }
 
 .carrusel-controles button {
-    padding: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0 0.2rem;
+    font-size: 1.5rem;
+    line-height: 1;
     background-color: transparent;
     border: 2px solid var(--color-3-roble);
     border-radius: 0;
@@ -804,37 +822,43 @@ img {
     text-transform: uppercase;
 }
 
-.joyas-galeria {
-    --bs-carousel-items-gap: 1rem;
+.joyas-galeria,
+.senorial-galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.joyas-fila {
+    display: flex;
+    gap: 1rem;
+    overflow: hidden;
 }
 
 .joyas-imagen {
-    height: 20rem;
+    flex-shrink: 0;
     width: auto;
     max-width: none;
+    height: 20rem;
     transition: opacity 0.3s;
 }
 
-.joyas-imagen:hover {
-    opacity: 0.8;
-}
-
-.senorial-galeria {
-    --bs-carousel-items-gap: 1rem;
-    --bs-carousel-items-peek: 3rem;
-}
-
-.senorial-galeria .carousel-inner {
-    padding: 0 var(--bs-carousel-items-peek);
+.senorial-fila {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
 }
 
 .senorial-imagen {
-    width: 100%;
+    flex-shrink: 0;
+    width: calc(100% - 6rem);
     aspect-ratio: 2 / 3;
     object-fit: cover;
     transition: opacity 0.3s;
 }
 
+.joyas-imagen:hover,
 .senorial-imagen:hover {
     opacity: 0.8;
 }
@@ -945,8 +969,6 @@ img {
 
 .formulario textarea {
     min-height: 10rem;
-    /* Busqué ejemplos de formularios para referencias de diseño y quise agregar este atributo así
-    queda bien prolijo y no se pueda simplemente arrastrar el cambo en horizontal. */
     resize: vertical;
 }
 
@@ -1026,9 +1048,6 @@ img {
 
 /* SOLO EN CELULAR */
 
-/* Agregué este max-width para después no tener que rehacer el tema de
-los testimonios, me pareció más lógico ya que es la única excepción. */
-
 @media (max-width: 767px) {
 
     /* MAIN PROYECTOS */
@@ -1055,6 +1074,10 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
 
     .header-general .container-fluid {
         padding: 0 2rem;
+    }
+
+    .header-general .navbar-collapse {
+        padding-top: 0;
     }
 
     /* FOOTER */
@@ -1105,18 +1128,14 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
         gap: 3rem;
     }
 
-    .taller-galeria {
-        --bs-carousel-items: 3;
-    }
-
     /* MAIN PROYECTOS */
 
     .joyas-imagen {
         height: 28rem;
     }
 
-    .senorial-galeria {
-        --bs-carousel-items-peek: 30%;
+    .senorial-imagen {
+        width: 40%;
     }
 
     .living-item {
@@ -1274,7 +1293,6 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
 
     .taller-ciudad {
         display: block;
-        /* El "Buenos Aires" se me estaba cortando en desktop así que forcé que se vaya a la línea de abajo. */
     }
 
     .taller-galeria {
@@ -1287,8 +1305,8 @@ los testimonios, me pareció más lógico ya que es la única excepción. */
         max-width: 60%;
     }
 
-    .senorial-galeria {
-        --bs-carousel-items-peek: 35%;
+    .senorial-imagen {
+        width: 30%;
     }
 
     .testimonios-lista {

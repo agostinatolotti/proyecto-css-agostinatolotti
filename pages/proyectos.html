@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tolotti Ebanistas ⎮ Proyectos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css">
 
 </head>
@@ -14,29 +14,23 @@
 <body>
     <!-- Navbar de Bootstrap -->
     <header class="header-general">
-        <nav class="navbar md:navbar-expand">
+        <nav class="navbar navbar-expand-md" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html">
                     <img class="header-logo" src="../assets/images/logo/logo-2-negativo.png" alt="Logo de la marca Tolotti Ebanistas">
                 </a>
-                <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
-                    <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <dialog class="drawer drawer-end" tabindex="-1" id="menu-principal" aria-labelledby="menu-principal-titulo">
-                    <div class="drawer-header">
-                        <h5 class="drawer-title" id="menu-principal-titulo">Menú</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Cerrar"></button>
-                    </div>
-                    <div class="drawer-body">
-                        <ul class="navbar-nav header-nav">
-                            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./servicios.html">Servicios</a></li>
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="./proyectos.html">Proyectos</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
-                        </ul>
-                    </div>
-                </dialog>
+                <div class="collapse navbar-collapse" id="menu-principal">
+                    <ul class="navbar-nav header-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./servicios.html">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="./proyectos.html">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -90,45 +84,67 @@
         <section class="section-contenedor proyectos-galeria">
             <h2>Joyas destacadas</h2>
             <!-- Bootstrap -->
-            <div id="carrusel-joyas" class="carousel carousel-auto slide joyas-galeria" data-bs-ends="stop">
+            <div id="carrusel-joyas" class="carousel slide joyas-galeria" data-bs-wrap="false">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00001.jpg" alt="Mueble bajo de tres puertas con tallados.">
+                        <div class="joyas-fila">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00001.jpg" alt="Mueble bajo de tres puertas con tallados.">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00002.jpg" alt="Cajonera recibidora">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00003.jpg" alt="Mesa recibidora">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00037.jpg" alt="Detalle de esquina tallada con volutas">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00002.jpg" alt="Cajonera recibidora">
+                        <div class="joyas-fila">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00002.jpg" alt="Cajonera recibidora">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00003.jpg" alt="Mesa recibidora">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00037.jpg" alt="Detalle de esquina tallada con volutas">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00012.jpg" alt="Escritorio con biblioteca tallada de pared completa">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00003.jpg" alt="Mesa recibidora">
+                        <div class="joyas-fila">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00003.jpg" alt="Mesa recibidora">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00037.jpg" alt="Detalle de esquina tallada con volutas">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00012.jpg" alt="Escritorio con biblioteca tallada de pared completa">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00031.jpg" alt="Escritorio secreter con compartimentos y lámpara">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00037.jpg" alt="Detalle de esquina tallada con volutas">
+                        <div class="joyas-fila">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00037.jpg" alt="Detalle de esquina tallada con volutas">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00012.jpg" alt="Escritorio con biblioteca tallada de pared completa">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00031.jpg" alt="Escritorio secreter con compartimentos y lámpara">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00040.jpg" alt="Detalle de marquetería con motivos florales">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00012.jpg" alt="Escritorio con biblioteca tallada de pared completa">
+                        <div class="joyas-fila">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00012.jpg" alt="Escritorio con biblioteca tallada de pared completa">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00031.jpg" alt="Escritorio secreter con compartimentos y lámpara">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00040.jpg" alt="Detalle de marquetería con motivos florales">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00032.jpg" alt="Escritorio clásico con lámpara de bronce">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00031.jpg" alt="Escritorio secreter con compartimentos y lámpara">
+                        <div class="joyas-fila">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00031.jpg" alt="Escritorio secreter con compartimentos y lámpara">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00040.jpg" alt="Detalle de marquetería con motivos florales">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00032.jpg" alt="Escritorio clásico con lámpara de bronce">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00035.jpg" alt="Repisa de pared tallada con candelabro">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00040.jpg" alt="Detalle de marquetería con motivos florales">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00032.jpg" alt="Escritorio clásico con lámpara de bronce">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="joyas-imagen" src="../assets/images/muebles/mueble-00035.jpg" alt="Repisa de pared tallada con candelabro">
+                        <div class="joyas-fila">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00040.jpg" alt="Detalle de marquetería con motivos florales">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00032.jpg" alt="Escritorio clásico con lámpara de bronce">
+                            <img class="joyas-imagen" src="../assets/images/muebles/mueble-00035.jpg" alt="Repisa de pared tallada con candelabro">
+                        </div>
                     </div>
                 </div>
                 <div class="carrusel-controles">
-                    <button class="btn-icon" type="button" data-bs-target="#carrusel-joyas" data-bs-slide="prev">
-                        <span class="carousel-icon-prev" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="btn-icon" type="button" data-bs-target="#carrusel-joyas" data-bs-slide="next">
-                        <span class="carousel-icon-next" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
+                    <button type="button" data-bs-target="#carrusel-joyas" data-bs-slide="prev" aria-label="Anterior">‹</button>
+                    <button type="button" data-bs-target="#carrusel-joyas" data-bs-slide="next" aria-label="Siguiente">›</button>
                 </div>
             </div>
             <!-- Bootstrap -->
@@ -166,45 +182,75 @@
         <section class="section-contenedor proyectos-galeria">
             <h2>Mobiliario Señorial</h2>
             <!-- Bootstrap -->
-            <div id="carrusel-senorial" class="carousel carousel-center slide senorial-galeria" data-bs-autoplay="true" data-bs-interval="3000">
+            <div id="carrusel-senorial" class="carousel slide senorial-galeria" data-bs-ride="carousel" data-bs-interval="3000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00004.jpg" alt="Biblioteca vitrina con puerta de vidrio y columnas talladas">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00034.jpg" alt="Biblioteca abierta con coronación tallada">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00004.jpg" alt="Biblioteca vitrina con puerta de vidrio y columnas talladas">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00005.jpg" alt="Cajonera moderna con tallados en los cajones superiores">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00005.jpg" alt="Cajonera moderna con tallados en los cajones superiores">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00004.jpg" alt="Biblioteca vitrina con puerta de vidrio y columnas talladas">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00005.jpg" alt="Cajonera moderna con tallados en los cajones superiores">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00006.jpg" alt="Puerta curva doble con marco tallado y vitró transparente">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00006.jpg" alt="Puerta curva doble con marco tallado y vitró transparente">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00005.jpg" alt="Cajonera moderna con tallados en los cajones superiores">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00006.jpg" alt="Puerta curva doble con marco tallado y vitró transparente">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00007.jpg" alt="Pata de mesa tallada como garra de león">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00007.jpg" alt="Pata de mesa tallada como garra de león">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00006.jpg" alt="Puerta curva doble con marco tallado y vitró transparente">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00007.jpg" alt="Pata de mesa tallada como garra de león">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00010.jpg" alt="Mueble de living tipo rack con puertas y cajones">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00010.jpg" alt="Mueble de living tipo rack con puertas y cajones">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00007.jpg" alt="Pata de mesa tallada como garra de león">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00010.jpg" alt="Mueble de living tipo rack con puertas y cajones">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00008.jpg" alt="Vajillero con estantes y paneles tallados">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00008.jpg" alt="Vajillero con estantes y paneles tallados">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00010.jpg" alt="Mueble de living tipo rack con puertas y cajones">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00008.jpg" alt="Vajillero con estantes y paneles tallados">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00030.jpg" alt="Mueble alto con tallados góticos">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00030.jpg" alt="Mueble alto con tallados góticos">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00008.jpg" alt="Vajillero con estantes y paneles tallados">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00030.jpg" alt="Mueble alto con tallados góticos">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00029.jpg" alt="Biblioteca vitrina de pared completa con columnas talladas">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00029.jpg" alt="Biblioteca vitrina de pared completa con columnas talladas">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00030.jpg" alt="Mueble alto con tallados góticos">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00029.jpg" alt="Biblioteca vitrina de pared completa con columnas talladas">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00034.jpg" alt="Biblioteca abierta con coronación tallada">
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="senorial-imagen" src="../assets/images/muebles/mueble-00034.jpg" alt="Biblioteca abierta con coronación tallada">
+                        <div class="senorial-fila">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00029.jpg" alt="Biblioteca vitrina de pared completa con columnas talladas">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00034.jpg" alt="Biblioteca abierta con coronación tallada">
+                            <img class="senorial-imagen" src="../assets/images/muebles/mueble-00004.jpg" alt="Biblioteca vitrina con puerta de vidrio y columnas talladas">
+                        </div>
                     </div>
                 </div>
                 <div class="carrusel-controles">
-                    <button class="btn-icon" type="button" data-bs-target="#carrusel-senorial" data-bs-slide="prev">
-                        <span class="carousel-icon-prev" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="btn-icon" type="button" data-bs-target="#carrusel-senorial" data-bs-slide="next">
-                        <span class="carousel-icon-next" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
+                    <button type="button" data-bs-target="#carrusel-senorial" data-bs-slide="prev" aria-label="Anterior">‹</button>
+                    <button type="button" data-bs-target="#carrusel-senorial" data-bs-slide="next" aria-label="Siguiente">›</button>
                 </div>
             </div>
             <!-- Bootstrap -->
@@ -270,8 +316,8 @@
             <p>© 2026 Tolotti Ebanistas. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 
 </html>
