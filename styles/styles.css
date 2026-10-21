@@ -1,4 +1,5 @@
 /* RESTABLECIMIENTO DE ESTILOS */
+
 * {
     margin: 0;
     padding: 0;
@@ -169,6 +170,36 @@ img {
     height: auto;
 }
 
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+main {
+    animation: aparecer 0.4s ease-out;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(1.5rem);
+}
+
+[data-aos="zoom-in"] {
+    transform: scale(0.9);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-1.5rem);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(1.5rem);
+}
+
 /* CLASES REUTILIZABLES */
 
 .section-contenedor {
@@ -211,6 +242,53 @@ img {
 .boton-secundario:focus-visible {
     background-color: var(--color-3-roble);
     color: var(--color-5-ebano);
+}
+
+.nosotros-intro,
+.proyectos-intro,
+.contacto-info {
+    background-color: var(--color-4-nogal);
+    color: var(--color-2-arce);
+}
+
+.nosotros-intro h1,
+.proyectos-intro h1,
+.contacto-info h1 {
+    font-family: var(--tipografia-titulos-decorativa);
+    font-size: clamp(3rem, 14vw, 8rem);
+    line-height: 1;
+}
+
+.titulo-outline {
+    font-family: var(--tipografia-titulos-outline);
+    font-size: 6rem;
+    margin-left: 9rem;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.carrusel-controles {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.carrusel-controles button {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0 0.2rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 2px solid var(--color-3-roble);
+    border-radius: 0;
+    color: var(--color-3-roble);
+}
+
+.carrusel-controles button:hover,
+.carrusel-controles button:focus-visible {
+    background-color: var(--color-3-roble);
+    color: var(--color-1-abedul);
 }
 
 /* HEADER */
@@ -295,6 +373,22 @@ img {
     letter-spacing: 0.2em;
 }
 
+@keyframes menu-entrada {
+    0% {
+        opacity: 0;
+        transform: translateY(-0.75rem);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* FOOTER */
 
 .footer-top {
@@ -314,6 +408,11 @@ img {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    transition: transform 0.3s ease-out;
+}
+
+.footer-logos:hover {
+    transform: scale(1.05);
 }
 
 .footer-isotipo {
@@ -341,6 +440,17 @@ img {
     font-size: 1rem;
 }
 
+.footer-info svg,
+.contacto-dato svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease-out;
+}
+
+.footer-info:hover svg,
+.contacto-dato:hover svg {
+    transform: translateX(4px);
+}
+
 .footer-redes {
     display: flex;
     align-items: center;
@@ -351,6 +461,11 @@ img {
 .footer-redes svg {
     width: 2rem;
     height: 2rem;
+    transition: transform 0.3s ease-out;
+}
+
+.footer-redes svg:hover {
+    transform: translateY(-4px);
 }
 
 .footer-eslogan p {
@@ -374,9 +489,18 @@ img {
     text-transform: uppercase;
 }
 
-/* MAIN: INICIO */
+.footer-bottom a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
 
-/* MAIN INICIO: PRESENTACIÓN */
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible {
+    color: var(--color-3-roble);
+}
+
+/* MAIN: INICIO */
 
 .section-presentacion-contenedor {
     background-color: var(--color-4-nogal);
@@ -394,6 +518,28 @@ img {
     text-align: left;
 }
 
+@keyframes entrada-suave {
+    0% {
+        opacity: 0;
+        transform: translateX(-1.5rem);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.section-presentacion-contenido h1,
+.section-presentacion-descripcion,
+.section-presentacion-contenido .boton {
+    animation: entrada-suave 0.5s ease-out backwards;
+}
+
 .section-presentacion-contenido h1 {
     display: flex;
     flex-direction: column;
@@ -401,14 +547,6 @@ img {
     font-family: var(--tipografia-titulos-decorativa);
     font-size: clamp(3rem, 12vw, 8rem);
     line-height: 0.5;
-}
-
-.titulo-outline {
-    font-family: var(--tipografia-titulos-outline);
-    font-size: 6rem;
-    margin-left: 9rem;
-    line-height: 1;
-    white-space: nowrap;
 }
 
 .section-presentacion-contenido .titulo-outline {
@@ -420,9 +558,12 @@ img {
     font-family: var(--tipografia-cuerpo-regular);
     font-size: 1rem;
     line-height: 1.5;
+    animation-delay: 0.2s;
 }
 
-/* MAIN INICIO: CARACTERÍSTICAS */
+.section-presentacion-contenido .boton {
+    animation-delay: 0.4s;
+}
 
 .section-caracteristicas-contenedor {
     display: grid;
@@ -440,8 +581,27 @@ img {
 }
 
 .section-caracteristicas-contenedor h2 {
+    position: relative;
+    display: inline-block;
     font-size: 1rem;
     text-transform: uppercase;
+}
+
+.section-caracteristicas-contenedor h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-3-roble);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+}
+
+.section-caracteristicas-contenido:hover h2::after {
+    transform: scaleX(1);
 }
 
 .section-caracteristicas-contenedor p {
@@ -456,16 +616,17 @@ img {
     fill: var(--color-4-nogal);
 }
 
-/* MAIN INICIO: PRODUCTO SEMANAL */
-
 .section-producto-semanal-contenedor {
+    background-color: var(--color-1-abedul);
+}
+
+.producto-semanal-grilla {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
         "imagen"
         "texto";
     gap: 2.5rem;
-    background-color: var(--color-1-abedul);
 }
 
 .producto-semanal-imagen {
@@ -473,6 +634,14 @@ img {
     width: 100%;
     outline: 4px solid var(--color-2-arce);
     outline-offset: 10px;
+    transition: transform 0.3s ease-out;
+}
+
+.producto-semanal-imagen:hover,
+.producto-semanal-imagen.aos-animate:hover {
+    /* Sumé la clase aos-animate porque AOS se la agrega a la foto del producto cuando termina
+    de animarla y su regla tenía más especificidad que mi hover así que el zoom no funcionaba */
+    transform: scale(1.03);
 }
 
 .producto-semanal-texto {
@@ -481,21 +650,21 @@ img {
 }
 
 .producto-semanal-deco {
-    /* Acá oculté el leoncito para ponerlo en el media query de escritorio. */
     display: none;
     grid-area: deco;
     justify-self: center;
     width: 9rem;
 }
 
-/* MAIN INICIO: EL TALLER */
-
 .section-taller-contenedor {
+    background-color: var(--color-5-ebano);
+    color: var(--color-2-arce);
+}
+
+.taller-grilla {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    background-color: var(--color-5-ebano);
-    color: var(--color-2-arce);
 }
 
 .taller-direccion {
@@ -519,44 +688,21 @@ img {
     flex: 1;
     min-width: 0;
     width: 100%;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s ease-out;
 }
 
 .taller-imagen:hover {
     opacity: 0.8;
-}
-
-.carrusel-controles {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.carrusel-controles button {
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0 0 0.2rem;
-    font-size: 1.5rem;
-    line-height: 1;
-    background-color: transparent;
-    border: 2px solid var(--color-3-roble);
-    border-radius: 0;
-    color: var(--color-3-roble);
-}
-
-.carrusel-controles button:hover,
-.carrusel-controles button:focus-visible {
-    background-color: var(--color-3-roble);
-    color: var(--color-1-abedul);
+    transform: scale(1.03);
 }
 
 /* MAIN: NOSOTROS */
 
 .main-nosotros {
     background-color: var(--color-1-abedul);
+    /* Acá tuve que poner clip porque con hidden me parecía un scroll vertical que no podía sacar */
+    overflow-x: clip;
 }
-
-/* MAIN NOSOTROS: PRESENTACIÓN */
 
 .section-nosotros-contenedor {
     display: flex;
@@ -578,7 +724,8 @@ img {
 .section-nosotros-imagen {
     width: 100%;
     max-width: 22rem;
-    border: 10px solid var(--color-4-nogal);
+    box-shadow: 0 1rem 2.5rem rgba(46, 26, 8, 0.45);
+    transition: opacity 0.3s, transform 0.3s ease-out;
 }
 
 .section-nosotros-texto {
@@ -604,8 +751,6 @@ img {
     text-align: center;
 }
 
-/* MAIN NOSOTROS: TRADICIÓN Y MADERA */
-
 .section-titulo-contenedor {
     background-color: var(--color-2-arce);
     display: flex;
@@ -615,7 +760,7 @@ img {
     color: var(--color-4-nogal);
 }
 
-.section-titulo-contenedor h1 {
+.section-titulo-contenedor h2 {
     font-family: var(--tipografia-titulos-decorativa);
     font-size: clamp(3rem, 14vw, 12rem);
     line-height: 0.5;
@@ -628,8 +773,6 @@ img {
     margin-left: 1em;
     font-size: clamp(2.5rem, 12vw, 10rem);
 }
-
-/* MAIN NOSOTROS: LINAJE */
 
 .section-linaje-contenedor {
     display: flex;
@@ -647,7 +790,7 @@ img {
     align-self: flex-start;
     font-size: clamp(2.2rem, 8vw, 5.5rem);
     line-height: 1;
-    color: var(--color-4-nogal)
+    color: var(--color-4-nogal);
 }
 
 .section-linaje-contenedor p {
@@ -683,6 +826,7 @@ img {
     width: 100%;
     height: auto;
     border: 6px solid var(--color-2-arce);
+    transition: opacity 0.3s, transform 0.3s ease-out;
 }
 
 .linaje-origen-texto {
@@ -714,8 +858,6 @@ img {
     font-size: 1rem;
 }
 
-/* MAIN NOSOTROS: GALERIA DE FOTOS */
-
 .linaje-galeria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -725,13 +867,18 @@ img {
 
 .linaje-imagen {
     width: 100%;
+    transition: opacity 0.3s, transform 0.3s ease-out;
+}
+
+.section-nosotros-imagen:hover,
+.linaje-postal:hover,
+.linaje-imagen:hover {
+    transform: scale(1.03);
 }
 
 .linaje-imagen-horizontal {
     grid-column: span 3;
 }
-
-/* MAIN NOSOTROS: ILUSTRACIÓN */
 
 .section-cierre-contenedor {
     display: flex;
@@ -744,20 +891,285 @@ img {
     height: auto;
 }
 
-/* MAIN PROYECTOS: INTRO */
+/* MAIN: SERVICIOS */
 
-.proyectos-intro {
+.servicios {
+    background-color: var(--color-1-abedul);
+    color: var(--color-4-nogal);
+}
+
+.servicios h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    text-transform: uppercase;
+}
+
+.servicios-deco {
+    display: block;
+    transform: rotate(-6deg);
+    transition: transform 0.3s ease-out;
+}
+
+.servicios-deco:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.servicios-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.servicios-intro-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.servicios-intro h1 {
+    font-family: var(--tipografia-titulos-outline);
+    font-size: clamp(3rem, 15vw, 11rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.servicios-intro-bajada {
+    max-width: 32rem;
+    font-family: var(--tipografia-cuerpo-italic);
+    line-height: 1.5;
+}
+
+.servicios-intro-especialidad {
+    font-family: var(--tipografia-subtitulos-cursiva);
+    font-size: clamp(0.9rem, 4.6vw, 1.8rem);
+    white-space: nowrap;
+}
+
+.servicios-intro-especialidad span {
+    display: block;
+    font-family: var(--tipografia-titulos);
+    font-size: clamp(2rem, 9vw, 6rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.servicios-intro-especialidad .especialidad-conector {
+    display: inline;
+    font-family: var(--tipografia-subtitulos-cursiva);
+    font-size: 0.6em;
+    vertical-align: 0.4em;
+    text-transform: none;
+}
+
+.servicios-deco-biblioteca {
+    align-self: center;
+    width: 80%;
+    max-width: 24rem;
+}
+
+.fabricamos {
+    position: relative;
+    /* Otra vez agregué clip para que no apareciera un scroll */
+    overflow-x: clip;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--color-2-arce);
+    text-align: center;
+}
+
+.fabricamos h2 {
+    padding: 0 2rem 1.25rem;
+    border-bottom: 2px solid var(--color-4-nogal);
+}
+
+.fabricamos::before {
+    content: "";
+    position: absolute;
+    top: 5rem;
+    left: -14rem;
+    width: 40rem;
+    height: 40rem;
+    background-image: url("../assets/images/logo/logo-3-single-color.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.fabricamos-nube {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    max-width: 60rem;
+    list-style: none;
+    padding: 0;
+}
+
+.fabricamos-nube li {
+    font-family: var(--tipografia-titulos);
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.fabricamos-nube span {
+    display: inline-block;
+    transition: transform 0.3s ease-out;
+}
+
+.fabricamos-nube li:nth-child(5n+2) {
+    font-family: var(--tipografia-subtitulos-cursiva);
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    text-transform: none;
+}
+
+.fabricamos-nube li:nth-child(5n+2) span {
+    /* Puse la inclinación en un span adentro del li porque el li tiene
+    la animación de AOS,que también usa transform y me pisaba el rotate */
+    transform: rotate(-6deg);
+}
+
+.fabricamos-nube li:nth-child(5n+3) {
+    font-family: var(--tipografia-cuerpo-italic);
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    text-transform: none;
+}
+
+.fabricamos-nube li:nth-child(5n+4) {
+    font-family: var(--tipografia-titulos-outline);
+    font-size: clamp(2.6rem, 9vw, 5.5rem);
+}
+
+.fabricamos-nube li:nth-child(5n) {
+    font-size: clamp(1.3rem, 4vw, 2.2rem);
+}
+
+.fabricamos-nube li:hover span {
+    transform: rotate(-4deg) scale(1.1);
+}
+
+.fabricamos-nota {
+    font-family: var(--tipografia-cuerpo-italic);
+    font-size: 1rem;
+}
+
+.fabricamos .boton {
     background-color: var(--color-4-nogal);
     color: var(--color-2-arce);
 }
 
-.proyectos-intro h1 {
-    font-family: var(--tipografia-titulos-decorativa);
-    font-size: clamp(3rem, 14vw, 8rem);
-    line-height: 1;
+.fabricamos .boton:hover,
+.fabricamos .boton:focus-visible {
+    background-color: var(--color-5-ebano);
 }
 
-/* MAIN PROYECTOS: TESTIMONIOS */
+.servicios-deco-mesa {
+    width: 60%;
+    max-width: 16rem;
+    transform: rotate(8deg);
+}
+
+.preguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.preguntas-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.preguntas-acordeon {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-color: var(--color-4-nogal);
+    --bs-accordion-border-color: var(--color-3-roble);
+    --bs-accordion-border-radius: 0;
+    --bs-accordion-inner-border-radius: 0;
+    --bs-accordion-btn-color: var(--color-4-nogal);
+    --bs-accordion-active-bg: var(--color-2-arce);
+    --bs-accordion-active-color: var(--color-4-nogal);
+    --bs-accordion-btn-focus-box-shadow: none;
+}
+
+.preguntas-acordeon .accordion-header {
+    font-size: 1rem;
+}
+
+.preguntas-acordeon .accordion-button {
+    font-family: var(--tipografia-titulos);
+    font-size: 1.1rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.preguntas-acordeon .accordion-button:hover,
+.preguntas-acordeon .accordion-button:focus-visible {
+    background-color: var(--color-2-arce);
+}
+
+.preguntas-acordeon .accordion-button:active {
+    transform: none;
+}
+
+.preguntas-acordeon .accordion-body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.servicios-deco-escritorio {
+    align-self: center;
+    width: 60%;
+    max-width: 18rem;
+    transform: rotate(-4deg);
+}
+
+.servicios-cierre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: var(--color-4-nogal);
+    color: var(--color-2-arce);
+    text-align: center;
+}
+
+.servicios-cierre h2 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+}
+
+.servicios-cierre p {
+    font-family: var(--tipografia-subtitulos-cursiva);
+    font-size: 1.6rem;
+}
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.servicios-cierre .boton:hover {
+    animation: latido 0.5s ease-in-out;
+}
+
+/* MAIN: PROYECTOS */
+
+.proyectos-intro {
+    align-items: center;
+    text-align: center;
+}
 
 .proyectos-testimonios {
     background-color: var(--color-2-arce);
@@ -780,6 +1192,14 @@ img {
         "nombre opinion";
     align-items: start;
     gap: 0.5rem 1rem;
+}
+
+.testimonios-lista:hover .testimonio {
+    transform: scale(0.95);
+}
+
+.testimonios-lista .testimonio:hover {
+    transform: scale(1.05);
 }
 
 .testimonio-avatar {
@@ -805,8 +1225,6 @@ img {
     line-height: 1.6;
 }
 
-/* MAIN PROYECTOS: GALERÍAS */
-
 .proyectos-galeria {
     display: flex;
     flex-direction: column;
@@ -822,6 +1240,30 @@ img {
     text-transform: uppercase;
 }
 
+.titulo-leones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.titulo-leones::before,
+.titulo-leones::after {
+    content: "";
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("../assets/images/decorative/deco-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.titulo-leones::before {
+    /* Acá voltié horizontalmente el leoncito así quedaba espejado */
+    transform: scaleX(-1);
+}
+
 .joyas-galeria,
 .senorial-galeria {
     display: flex;
@@ -830,40 +1272,45 @@ img {
 }
 
 .joyas-fila {
-    display: flex;
+    display: grid;
+    /* Con auto en el medio la columna central toma el ancho justo de su foto,
+    y con minmax(0, 1fr) las de los costados se reparten lo que sobra en partes iguales
+    así la foto central queda siempre en el centro */
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     gap: 1rem;
     overflow: hidden;
 }
 
 .joyas-imagen {
-    flex-shrink: 0;
     width: auto;
     max-width: none;
     height: 20rem;
-    transition: opacity 0.3s;
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.3s ease-out;
 }
 
-.senorial-fila {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    overflow: hidden;
+.joyas-imagen:nth-child(1) {
+    justify-self: end;
 }
 
-.senorial-imagen {
-    flex-shrink: 0;
-    width: calc(100% - 6rem);
-    aspect-ratio: 2 / 3;
+.joyas-imagen:nth-child(2) {
+    max-width: 70vw;
     object-fit: cover;
-    transition: opacity 0.3s;
+    opacity: 1;
 }
 
-.joyas-imagen:hover,
-.senorial-imagen:hover {
+.joyas-imagen:nth-child(3) {
+    justify-self: start;
+}
+
+.joyas-imagen:hover {
     opacity: 0.8;
+    transform: scale(1.03);
 }
 
-/* MAIN PROYECTOS: JUEGOS DE LIVING */
+.joyas-imagen:nth-child(2):hover {
+    opacity: 1;
+}
 
 .proyectos-living {
     display: flex;
@@ -885,11 +1332,12 @@ img {
 .living-imagen {
     grid-area: imagen;
     width: 100%;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s, transform 0.3s ease-out;
 }
 
 .living-imagen:hover {
     opacity: 0.8;
+    transform: scale(1.03);
 }
 
 .living-descripcion {
@@ -899,19 +1347,55 @@ img {
     line-height: 1.6;
 }
 
-/* MAIN: CONTACTO */
-
-/* MAIN CONTACTO: DATOS */
-
-.contacto-info {
-    background-color: var(--color-4-nogal);
-    color: var(--color-2-arce);
+.senorial-fila {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
 }
 
-.contacto-info h1 {
-    font-family: var(--tipografia-titulos-decorativa);
-    font-size: clamp(3rem, 14vw, 8rem);
-    line-height: 1;
+.senorial-imagen {
+    flex-shrink: 0;
+    width: calc(100% - 6rem);
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: opacity 0.3s, transform 0.3s ease-out;
+}
+
+.senorial-imagen:nth-child(2) {
+    opacity: 1;
+}
+
+.senorial-imagen:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+}
+
+.senorial-imagen:nth-child(2):hover {
+    opacity: 1;
+}
+
+/* MAIN: CONTACTO */
+
+.contacto-info {
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto-info::after {
+    content: "";
+    position: absolute;
+    top: -4rem;
+    right: -10rem;
+    width: 34rem;
+    height: 34rem;
+    background-image: url("../assets/images/logo/logo-3-single-color-negativo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    /* Para que el escudo no interrumpa el botón o alguna otra acción, para ser precavida agregué esta propiedad */
+    pointer-events: none;
 }
 
 .contacto-dato {
@@ -929,8 +1413,6 @@ img {
 .contacto-dato p {
     font-size: 1rem;
 }
-
-/* MAIN CONTACTO: FORMULARIO */
 
 .contacto-formulario-contenedor {
     background-color: var(--color-1-abedul);
@@ -961,15 +1443,15 @@ img {
     transition: border-color 0.3s;
 }
 
+.formulario textarea {
+    min-height: 10rem;
+    resize: vertical;
+}
+
 .formulario input:focus,
 .formulario textarea:focus {
     border-color: var(--color-4-nogal);
     outline: none;
-}
-
-.formulario textarea {
-    min-height: 10rem;
-    resize: vertical;
 }
 
 .formulario button {
@@ -977,70 +1459,53 @@ img {
     margin-top: 1.5rem;
 }
 
-/* MAIN: SERVICIOS */
+/* MAIN: PRODUCTO */
 
-.servicios {
+.producto {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "titulo"
+        "imagen"
+        "ficha";
+    gap: 2rem;
     background-color: var(--color-1-abedul);
     color: var(--color-4-nogal);
 }
 
-.servicios h1 {
+.producto h1 {
+    grid-area: titulo;
     font-family: var(--tipografia-titulos-decorativa);
-    font-size: clamp(3rem, 14vw, 8rem);
+    font-size: clamp(2rem, 8.5vw, 4rem);
     line-height: 1;
 }
 
-.servicios h2 {
-    margin-top: 1rem;
+.producto .producto-semanal-imagen {
+    grid-area: imagen;
+}
+
+.producto-ficha {
+    grid-area: ficha;
+}
+
+.producto-ficha .producto-fecha {
+    font-family: var(--tipografia-cuerpo-italic);
     font-size: 1.2rem;
 }
 
-.servicios-lista {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem 1rem;
-    list-style: disc;
-    padding-left: 1rem;
+.producto-ficha h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
-.servicios-lista li {
-    font-family: var(--tipografia-cuerpo-regular);
-    font-size: 1rem;
-}
-
-.servicios-lista-completo {
-    grid-column: span 2;
-}
-
-.servicios .boton-secundario {
-    margin-top: 1rem;
-}
-
-/* MAIN: PRODUCTO */
-
-.producto {
-    background-color: var(--color-1-abedul);
-    color: var(--color-5-ebano);
-}
-
-.producto h1 {
-    font-size: clamp(2rem, 8vw, 3rem);
-    line-height: 1.2;
-    align-self: center;
-}
-
-.producto .producto-semanal-imagen {
-    margin: 1rem 0;
+.producto-ficha .producto-precio {
+    font-family: var(--tipografia-titulos);
+    font-size: 2rem;
 }
 
 .producto-estado {
-    align-self: center;
     padding: 0.5rem 1.5rem;
     background-color: var(--color-4-nogal);
-}
-
-.producto a {
-    align-self: center;
 }
 
 
@@ -1049,6 +1514,57 @@ img {
 /* SOLO EN CELULAR */
 
 @media (max-width: 767px) {
+
+    /* HEADER */
+
+    .header-nav {
+        align-items: flex-end;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+    position: relative;
+    }
+
+    .header-nav a {
+        font-size: 1.5rem;
+    }
+
+    .header-general .navbar-collapse {
+        position: relative;
+    }
+
+    .header-general .navbar-collapse::before {
+        content: "";
+        position: absolute;
+        top: 1rem;
+        left: -7rem;
+        width: 18rem;
+        height: 18rem;
+        background-image: url("../assets/images/logo/logo-3-single-color-negativo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.1;
+    }
+
+    .navbar-collapse.collapsing .nav-item,
+    .navbar-collapse.show .nav-item {
+        animation: menu-entrada 0.4s ease-out backwards;
+    }
+
+    .header-nav .nav-item:nth-child(2) {
+        animation-delay: 0.05s;
+    }
+
+    .header-nav .nav-item:nth-child(3) {
+        animation-delay: 0.1s;
+    }
+
+    .header-nav .nav-item:nth-child(4) {
+        animation-delay: 0.15s;
+    }
+
+    .header-nav .nav-item:nth-child(5) {
+        animation-delay: 0.2s;
+    }
 
     /* MAIN PROYECTOS */
 
@@ -1121,32 +1637,21 @@ img {
         padding: 2rem 3rem;
     }
 
-    .section-producto-semanal-contenedor {
+    .producto-semanal-grilla {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "imagen texto";
         align-items: center;
         gap: 3rem;
     }
 
-    /* MAIN PROYECTOS */
-
-    .joyas-imagen {
-        height: 28rem;
+    .taller-imagen:nth-child(1),
+    .taller-imagen:nth-child(3) {
+        opacity: 0.5;
     }
 
-    .senorial-imagen {
-        width: 40%;
-    }
-
-    .living-item {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "imagen texto";
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .living-item-invertido {
-        grid-template-areas: "texto imagen";
+    .taller-imagen:nth-child(1):hover,
+    .taller-imagen:nth-child(3):hover {
+        opacity: 0.8;
     }
 
     /* MAIN NOSOTROS */
@@ -1214,6 +1719,33 @@ img {
     .linaje-imagen-centrada {
         grid-column: 2 / 6;
     }
+
+    /* MAIN PROYECTOS */
+
+    .joyas-imagen {
+        height: 28rem;
+    }
+
+    .titulo-leones::before,
+    .titulo-leones::after {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .senorial-imagen {
+        width: 40%;
+    }
+
+    .living-item {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "imagen texto";
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .living-item-invertido {
+        grid-template-areas: "texto imagen";
+    }
 }
 
 /* DESKTOP */
@@ -1268,7 +1800,7 @@ img {
         gap: 1rem;
     }
 
-    .section-producto-semanal-contenedor {
+    .producto-semanal-grilla {
         grid-template-columns: 3fr 4fr 1fr;
         grid-template-areas: "imagen texto deco";
         gap: 4rem;
@@ -1279,76 +1811,8 @@ img {
         width: 100%;
     }
 
-    .section-taller-contenedor {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: "contenido galeria";
-        align-items: center;
-        gap: 4rem;
-    }
-
-    .section-taller-contenido {
-        grid-area: contenido;
-    }
-
     .taller-ciudad {
         display: block;
-    }
-
-    .taller-galeria {
-        grid-area: galeria;
-    }
-
-    /* MAIN PROYECTOS */
-
-    .proyectos-intro p {
-        max-width: 60%;
-    }
-
-    .senorial-imagen {
-        width: 30%;
-    }
-
-    .testimonios-lista {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 3rem;
-    }
-
-    .testimonio {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-            "avatar"
-            "nombre"
-            "opinion";
-        align-content: start;
-        justify-items: center;
-        text-align: center;
-    }
-
-    .proyectos-living {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: start;
-        gap: 3rem 2rem;
-    }
-
-    .proyectos-living h2 {
-        grid-column: span 3;
-    }
-
-    .living-item,
-    .living-item-invertido {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "imagen"
-            "texto";
-        gap: 1.5rem;
-    }
-
-    .living-imagen {
-        height: 28vw;
-        object-fit: cover;
     }
 
     /* MAIN NOSOTROS */
@@ -1357,10 +1821,28 @@ img {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
+            "intro intro"
             "francisco enrique"
             "titulo titulo"
             "linaje linaje"
             "cierre cierre";
+    }
+
+    .nosotros-intro {
+        grid-area: intro;
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .nosotros-intro h1 {
+        font-size: 5rem;
+    }
+
+    .nosotros-intro p {
+        flex: 1;
     }
 
     .section-nosotros-contenedor {
@@ -1433,5 +1915,171 @@ img {
 
     .cierre-imagen {
         max-width: 45rem;
+    }
+
+    /* MAIN SERVICIOS */
+
+    .servicios-intro {
+        display: grid;
+        grid-template-columns: auto 22rem;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .servicios-intro h1 {
+        font-size: clamp(3rem, 9vw, 11rem);
+    }
+
+    .servicios-intro-especialidad {
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+    }
+
+    .servicios-intro-especialidad span {
+        font-size: clamp(2.5rem, 5vw, 6rem);
+    }
+
+    .servicios-deco-biblioteca {
+        width: 100%;
+    }
+
+    .fabricamos {
+        padding-bottom: 6rem;
+    }
+
+    .servicios-deco-mesa {
+        position: absolute;
+        right: 4rem;
+        bottom: 2rem;
+        width: 13rem;
+    }
+
+    .preguntas {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .servicios-deco-escritorio {
+        width: 100%;
+    }
+
+    /* MAIN PROYECTOS */
+
+    .proyectos-intro p {
+        max-width: 60%;
+    }
+
+    .proyectos-testimonios {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .testimonios-lista {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+
+    .testimonio {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "avatar"
+            "nombre"
+            "opinion";
+        align-content: start;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .proyectos-living {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: start;
+        gap: 3rem 2rem;
+    }
+
+    .proyectos-living h2 {
+        grid-column: span 3;
+    }
+
+    .living-item,
+    .living-item-invertido {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "imagen"
+            "texto";
+        gap: 1.5rem;
+    }
+
+    .living-imagen {
+        height: 28vw;
+        object-fit: cover;
+    }
+
+    .senorial-imagen {
+        width: 30%;
+    }
+
+    /* MAIN PRODUCTO */
+
+    .producto {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "imagen titulo"
+            "imagen ficha";
+        grid-template-rows: auto 1fr;
+        column-gap: 4rem;
+        row-gap: 1rem;
+        align-items: end;
+    }
+
+    .producto h1 {
+        font-size: 4vw;
+    }
+
+    .producto-ficha {
+        align-self: start;
+    }
+
+    .producto .producto-semanal-imagen {
+        align-self: center;
+    }
+}
+
+/* ESCRITORIO GRANDE */
+
+@media (min-width: 1224px) {
+
+    /* MAIN INICIO */
+
+    .taller-grilla {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "contenido galeria";
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .section-taller-contenido {
+        grid-area: contenido;
+    }
+
+    .taller-galeria {
+        grid-area: galeria;
+    }
+}
+
+/* ACCESIBILIDAD: MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
