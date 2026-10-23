@@ -1,0 +1,31 @@
+// SECCIONES GLOBALES
+
+.section-contenedor {
+    padding: 3rem 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: 4rem 3rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 4rem 6rem;
+    }
+}
+
+.section-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    h4 {
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}

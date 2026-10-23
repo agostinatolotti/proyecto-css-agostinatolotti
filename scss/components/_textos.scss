@@ -1,0 +1,18 @@
+@use "../utilities/variables" as v;
+
+// TEXTOS
+
+.cuerpo-destacado {
+    font-family: v.$tipografia-cuerpo-regular;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: v.$color-3-roble;
+}
+
+.titulo-outline {
+    font-family: v.$tipografia-titulos-outline;
+    margin-left: 9rem;
+    line-height: 1;
+    white-space: nowrap;
+}

@@ -1,0 +1,34 @@
+// MIXINS
+
+// MIXINS ESPACIADOS
+
+@mixin columna($espacio) {
+  display: flex;
+  flex-direction: column;
+  gap: $espacio;
+}
+
+// MIXINS MEDIA QUERIES
+@mixin celular {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-grande {
+  @media (min-width: 1224px) {
+    @content;
+  }
+}

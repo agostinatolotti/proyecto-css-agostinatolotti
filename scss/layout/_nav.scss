@@ -1,0 +1,133 @@
+@use "../utilities/variables" as v;
+
+// NAVBAR
+
+.header-general {
+    .navbar-toggler {
+        padding: 0.25rem;
+        background-color: transparent;
+        border: none;
+    }
+
+    .navbar-toggler-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .navbar-collapse {
+        padding-top: 1.5rem;
+
+        @media (max-width: 767px) {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 1rem;
+                left: -7rem;
+                width: 18rem;
+                height: 18rem;
+                background-image: url("../assets/images/logo/logo-3-single-color-negativo.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: 0.1;
+            }
+        }
+
+        @media (min-width: 768px) {
+            padding-top: 0;
+        }
+    }
+}
+
+.navbar-collapse {
+    @media (max-width: 767px) {
+        &.collapsing .nav-item,
+        &.show .nav-item {
+            animation: menu-entrada 0.4s ease-out backwards;
+        }
+    }
+}
+
+.header-nav {
+    --bs-nav-link-padding-y: 0;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-left: auto;
+
+    @media (max-width: 767px) {
+        align-items: flex-end;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        position: relative;
+    }
+
+    @media (min-width: 1024px) {
+        gap: 2rem;
+    }
+
+    .nav-item {
+        @media (max-width: 767px) {
+            &:nth-child(2) {
+                animation-delay: 0.05s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0.1s;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 0.15s;
+            }
+
+            &:nth-child(5) {
+                animation-delay: 0.2s;
+            }
+        }
+    }
+
+    a {
+        font-family: v.$tipografia-cuerpo-regular;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: v.$color-2-arce;
+        transition: color 0.3s;
+
+        @media (max-width: 767px) {
+            font-size: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            font-size: 1.2rem;
+        }
+
+        &:hover,
+        &:focus-visible {
+            color: v.$color-3-roble;
+        }
+
+        &:focus-visible {
+            outline: 2px solid v.$color-3-roble;
+            outline-offset: 4px;
+        }
+
+        &:active {
+            color: v.$color-1-abedul;
+        }
+
+        &.active {
+            color: v.$color-3-roble;
+            position: relative;
+
+            &::after {
+                content: "•••";
+                position: absolute;
+                bottom: -0.4rem;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.6rem;
+                letter-spacing: 0.2em;
+            }
+        }
+    }
+}

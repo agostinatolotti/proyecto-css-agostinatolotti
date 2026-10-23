@@ -1,0 +1,43 @@
+@use "../utilities/variables" as v;
+
+// BOTONES
+
+button,
+.boton {
+    display: inline-block;
+    background-color: v.$color-2-arce;
+    color: v.$color-4-nogal;
+    font-family: v.$tipografia-cuerpo-regular;
+    text-transform: uppercase;
+    font-size: 1rem;
+    border: none;
+    padding: 0.9rem 1.6rem;
+    letter-spacing: 0.06em;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+
+    &:hover,
+    &:focus-visible {
+        background-color: v.$color-3-roble;
+    }
+
+    &:focus-visible {
+        outline: 2px solid v.$color-3-roble;
+        outline-offset: 4px;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid v.$color-3-roble;
+    color: v.$color-3-roble;
+
+    &:hover,
+    &:focus-visible {
+        background-color: v.$color-3-roble;
+        color: v.$color-5-ebano;
+    }
+}

@@ -1,0 +1,34 @@
+@use "../utilities/variables" as v;
+
+// HEADER
+
+.header-general {
+    .navbar {
+        --bs-navbar-color: #{v.$color-2-arce};
+        --bs-navbar-hover-color: #{v.$color-3-roble};
+        --bs-navbar-active-color: #{v.$color-3-roble};
+        --bs-navbar-brand-padding-y: 0;
+        --bs-navbar-nav-link-padding-x: 0;
+        --bs-navbar-toggler-focus-width: 0;
+        background-color: v.$color-5-ebano;
+        padding: 1rem 0;
+    }
+
+    .container-fluid {
+        justify-content: space-between;
+        padding: 0 1rem;
+
+        @media (min-width: 768px) {
+            padding: 0 2rem;
+        }
+    }
+}
+
+.header-logo {
+    width: 8rem;
+    height: auto;
+
+    @media (min-width: 1024px) {
+        width: 10rem;
+    }
+}

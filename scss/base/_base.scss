@@ -1,0 +1,13 @@
+@use "../utilities/variables" as v;
+
+// ESTILOS GLOBALES
+
+body {
+    background-color: v.$color-5-ebano;
+    color: v.$color-1-abedul;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

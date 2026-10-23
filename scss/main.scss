@@ -1,0 +1,28 @@
+// BASE
+@use "base/reset";
+@use "base/tipografias";
+@use "base/base";
+@use "base/animaciones";
+
+// LAYOUT
+@use "layout/header";
+@use "layout/nav";
+@use "layout/footer";
+@use "layout/secciones";
+
+// COMPONENTES
+@use "components/buttons";
+@use "components/carrusel";
+@use "components/intros";
+@use "components/textos";
+
+// PÁGINAS
+@use "pages/inicio";
+@use "pages/nosotros";
+@use "pages/servicios";
+@use "pages/proyectos";
+@use "pages/contacto";
+@use "pages/producto-semanal";
+
+// ACCESIBILIDAD
+@use "base/accesibilidad";

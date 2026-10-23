@@ -1,0 +1,16 @@
+@use "../utilities/variables" as v;
+
+// BANNERS INTROS
+
+.nosotros-intro,
+.proyectos-intro,
+.contacto-info {
+    background-color: v.$color-4-nogal;
+    color: v.$color-2-arce;
+
+    h1 {
+        font-family: v.$tipografia-titulos-decorativa;
+        font-size: clamp(3rem, 14vw, 8rem);
+        line-height: 1;
+    }
+}
