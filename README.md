@@ -2,7 +2,7 @@
 
 Es un sitio web ficticio, inspirado en mi abuelo materno y su hermano que eran ebanistas. Me lo imaginé como un emprendimiento familiar dedicado a la ebanistería y fabricación de muebles de estilo clásico.
 
-El proyecto es realizado en el marco de aprendizaje de la materia **CSS**, dentro de la Diplomatura de "Full Stack Development" de Coderhouse. Lo publiqué a partir de la preentrega n2, para evolucionar a partir de la misma según el contenido que veamos durante la cursada. 
+El proyecto es realizado en el marco de aprendizaje de la materia **CSS**, dentro de la Diplomatura de "Full Stack Development" de Coderhouse. Lo publiqué a partir de la preentrega n2, para evolucionar a partir de la misma según el contenido que veamos durante la cursada.
 
 ## Contenido
 
@@ -18,7 +18,7 @@ El sitio cuenta con las siguientes secciones:
 ## Tecnologías
 
 - HTML5
-- CSS
+- SCSS (Sass), compilado a un único CSS
 - Bootstrap 5.3 (versión 5.3.8, por CDN)
 - Animate.css (versión 4.1.1, por CDN)
 - AOS (versión 2.3.1, por CDN)
@@ -47,9 +47,21 @@ Librerías:
 - **Animate.css** en los títulos principales de cada página.
 - **AOS** en las secciones que aparecen al hacer scroll, con distintos efectos según la página: en Nosotros, todo lo de Francisco entra desde la izquierda y todo lo de Enrique desde la derecha, y en Servicios cada palabra de "¿Qué fabrican?" llega con una animación diferente.
 
+## SCSS
+
+En la preentrega 6 migré toda la hoja de estilos a SCSS. El archivo styles.css ahora es solo el resultado de la compilación.
+
+- **Estructura en partials:** utilities (variables y mixins), base (reset, tipografía, estilos globales, animaciones y accesibilidad), layout (header, nav, footer y secciones), components (botones, carruseles, intros y textos) y pages (un partial por página).
+- **main.scss** es el único punto de entrada y solo contiene directivas @use. Cada partial importa por su cuenta las variables y mixins que usa.
+- **Variables** para la paleta, las tipografías, los espaciados, los tamaños de texto, los bordes y las transiciones.
+- **Mixins:** columna y fila para las estructuras flex que más se repiten, y uno por breakpoint (celular, tablet, desktop y desktop grande) para las media queries.
+- **Anidamiento y &** para pseudoclases, pseudoelementos y media queries, que ahora viven junto a cada regla.
+
+Para compilar: `sass --watch scss/main.scss styles/styles.css`
+
 ## Detalles
 
-Accesibilidad: al final de la hoja de estilos está el bloque **prefers-reduced-motion**, que desactiva las animaciones para quienes tienen activada la opción de reducir el movimiento.
+Accesibilidad: en el partial de accesibilidad, que se carga último, está el bloque **prefers-reduced-motion**, que desactiva las animaciones para quienes tienen activada la opción de reducir el movimiento.
 
 En esta entrega también cerré el responsive de todas las páginas, rediseñé Servicios, sumé una intro a Nosotros, armé la ficha del producto de la semana y optimicé el peso de las imágenes.
 
@@ -69,5 +81,8 @@ Preentrega 4: Entregado el 09/10/2026
 
 Preentrega 5: Entregado el 21/10/2026
 (Animaciones y Transiciones)
+
+Preentrega 6: Entregado el 27/10/2026
+(Arquitectura SCSS y refactorización completa)
 
 Autora: Agostina Tolotti.

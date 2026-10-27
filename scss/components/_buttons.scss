@@ -9,11 +9,11 @@ button,
     color: v.$color-4-nogal;
     font-family: v.$tipografia-cuerpo-regular;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: v.$texto-base;
     border: none;
-    padding: 0.9rem 1.6rem;
+    padding: v.$boton-padding;
     letter-spacing: 0.06em;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    transition: background-color v.$transicion, color v.$transicion, transform v.$transicion - 0.1s;
 
     &:hover,
     &:focus-visible {
@@ -21,8 +21,8 @@ button,
     }
 
     &:focus-visible {
-        outline: 2px solid v.$color-3-roble;
-        outline-offset: 4px;
+        outline: v.$borde solid v.$color-3-roble;
+        outline-offset: v.$borde * 2;
     }
 
     &:active {
@@ -32,7 +32,7 @@ button,
 
 .boton-secundario {
     background-color: transparent;
-    border: 2px solid v.$color-3-roble;
+    border: v.$borde solid v.$color-3-roble;
     color: v.$color-3-roble;
 
     &:hover,

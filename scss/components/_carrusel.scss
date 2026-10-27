@@ -5,16 +5,16 @@
 .carrusel-controles {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: v.$espaciado-xs;
 
     button {
-        width: 2.5rem;
-        height: 2.5rem;
-        padding: 0 0 0.2rem;
-        font-size: 1.5rem;
+        width: v.$espaciado-s * 2.5;
+        height: v.$espaciado-s * 2.5;
+        padding: 0 0 v.$espaciado-xs * 0.4;
+        font-size: v.$texto-grande;
         line-height: 1;
         background-color: transparent;
-        border: 2px solid v.$color-3-roble;
+        border: v.$borde solid v.$color-3-roble;
         border-radius: 0;
         color: v.$color-3-roble;
 

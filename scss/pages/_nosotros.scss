@@ -1,394 +1,387 @@
 @use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
 
 // NOSOTROS
 
 .main-nosotros {
-    background-color: v.$color-1-abedul;
-    overflow-x: clip;
+  background-color: v.$color-1-abedul;
+  overflow-x: clip;
 
-    @media (min-width: 1024px) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "intro intro"
-            "francisco enrique"
-            "titulo titulo"
-            "linaje linaje"
-            "cierre cierre";
-    }
+  @include m.desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "intro intro"
+      "francisco enrique"
+      "titulo titulo"
+      "linaje linaje"
+      "cierre cierre";
+  }
 }
 
 // INTRO
 
 .nosotros-intro {
-    @media (min-width: 1024px) {
-        grid-area: intro;
-        flex-direction: row;
-        align-items: center;
-        gap: 4rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
+  @include m.desktop {
+    grid-area: intro;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 
-    h1 {
-        @media (min-width: 1024px) {
-            font-size: 5rem;
-        }
+  h1 {
+    @include m.desktop {
+      font-size: 5rem;
     }
+  }
 
-    p {
-        @media (min-width: 1024px) {
-            flex: 1;
-        }
+  p {
+    @include m.desktop {
+      flex: 1;
     }
+  }
 }
 
 // HISTORIAS
 
 .section-nosotros-contenedor {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+
+  @include m.tablet {
+    flex-direction: row;
+    gap: 2rem;
+    padding-bottom: 4rem;
+  }
+
+  @include m.desktop {
+    grid-area: francisco;
     gap: 1.5rem;
-    padding-bottom: 1rem;
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-        gap: 2rem;
-        padding-bottom: 4rem;
-    }
-
-    @media (min-width: 1024px) {
-        grid-area: francisco;
-        gap: 1.5rem;
-        padding: 4rem 2rem;
-    }
+    padding: 4rem 2rem;
+  }
 }
 
 .section-nosotros-invertida {
-    flex-direction: column;
+  flex-direction: column;
 
-    @media (min-width: 768px) {
-        flex-direction: row;
-    }
+  @include m.tablet {
+    flex-direction: row;
+  }
 
-    @media (min-width: 1024px) {
-        grid-area: enrique;
-    }
+  @include m.desktop {
+    grid-area: enrique;
+  }
 }
 
 .section-nosotros-firma {
-    width: 55%;
-    padding-bottom: 2rem;
+  width: 55%;
+  padding-bottom: 2rem;
 
-    @media (min-width: 768px) {
-        width: 80%;
-    }
+  @include m.tablet {
+    width: 80%;
+  }
 }
 
 .section-nosotros-imagen {
-    width: 100%;
-    max-width: 22rem;
-    box-shadow: 0 1rem 2.5rem rgba(v.$color-4-nogal, 0.45);
-    transition: opacity 0.3s, transform 0.3s ease-out;
+  width: 100%;
+  max-width: 22rem;
+  box-shadow: 0 1rem 2.5rem rgba(v.$color-4-nogal, 0.45);
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
 
-    @media (min-width: 768px) {
-        width: 50%;
-    }
+  @include m.tablet {
+    width: 50%;
+  }
 
-    @media (min-width: 1024px) {
-        height: clamp(20rem, 33vw, 30rem);
-        object-fit: cover;
-    }
+  @include m.desktop {
+    height: clamp(20rem, 33vw, 30rem);
+    object-fit: cover;
+  }
 
-    &:hover {
-        transform: scale(1.03);
-    }
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .section-nosotros-texto {
-    color: v.$color-4-nogal;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  @include m.columna(1rem);
+  color: v.$color-4-nogal;
+  justify-content: center;
+  align-items: center;
 
-    @media (min-width: 768px) {
-        flex: 1;
+  @include m.tablet {
+    flex: 1;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: clamp(3rem, 15vw, 7rem);
+    line-height: 0.5;
+    text-align: center;
+
+    @include m.tablet {
+      font-size: 4rem;
     }
 
-    h2 {
-        text-transform: uppercase;
-        font-size: clamp(3rem, 15vw, 7rem);
-        line-height: 0.5;
-        text-align: center;
+    @include m.desktop {
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      text-align: left;
+    }
+  }
 
-        @media (min-width: 768px) {
-            font-size: 4rem;
-        }
+  .titulo-outline {
+    display: block;
+    margin-left: 0;
+    font-size: clamp(2.5rem, 15vw, 6rem);
+    color: v.$color-3-roble;
 
-        @media (min-width: 1024px) {
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            text-align: left;
-        }
+    @include m.tablet {
+      font-size: 3.5rem;
     }
 
-    .titulo-outline {
-        display: block;
-        margin-left: 0;
-        font-size: clamp(2.5rem, 15vw, 6rem);
-        color: v.$color-3-roble;
-
-        @media (min-width: 768px) {
-            font-size: 3.5rem;
-        }
-
-        @media (min-width: 1024px) {
-            margin-left: 0.5em;
-            font-size: clamp(2rem, 3.5vw, 3.5rem);
-        }
+    @include m.desktop {
+      margin-left: 0.5em;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
     }
+  }
 }
 
 // TÍTULO
 
 .section-titulo-contenedor {
-    background-color: v.$color-2-arce;
-    display: flex;
-    justify-content: center;
-    padding-top: 5rem;
-    padding-bottom: 0;
-    color: v.$color-4-nogal;
+  background-color: v.$color-2-arce;
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 0;
+  color: v.$color-4-nogal;
 
-    @media (min-width: 768px) {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
+  @include m.tablet {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 
-    @media (min-width: 1024px) {
-        grid-area: titulo;
-        padding-top: 8rem;
-    }
+  @include m.desktop {
+    grid-area: titulo;
+    padding-top: 8rem;
+  }
 
-    h2 {
-        font-family: v.$tipografia-titulos-decorativa;
-        font-size: clamp(3rem, 14vw, 12rem);
-        line-height: 0.5;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  h2 {
+    font-family: v.$tipografia-titulos-decorativa;
+    font-size: clamp(3rem, 14vw, 12rem);
+    line-height: 0.5;
+    @include m.columna(0.5rem);
+  }
 
-    .titulo-outline {
-        margin-left: 1em;
-        font-size: clamp(2.5rem, 12vw, 10rem);
-    }
+  .titulo-outline {
+    margin-left: 1em;
+    font-size: clamp(2.5rem, 12vw, 10rem);
+  }
 }
 
 // LINAJE
 
 .section-linaje-contenedor {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    color: v.$color-3-roble;
+  @include m.columna(2rem);
+  color: v.$color-3-roble;
 
-    @media (min-width: 1024px) {
-        grid-area: linaje;
-        gap: 3rem;
-        padding: 0 6rem 4rem;
+  @include m.desktop {
+    grid-area: linaje;
+    gap: 3rem;
+    padding: 0 6rem 4rem;
+  }
+
+  h2 {
+    font-family: v.$tipografia-subtitulos-cursiva;
+    font-size: 2.2rem;
+
+    @include m.tablet {
+      font-size: 3rem;
     }
 
-    h2 {
-        font-family: v.$tipografia-subtitulos-cursiva;
-        font-size: 2.2rem;
-
-        @media (min-width: 768px) {
-            font-size: 3rem;
-        }
-
-        @media (min-width: 1024px) {
-            position: relative;
-            top: 7rem;
-            font-size: 2.5rem;
-        }
+    @include m.desktop {
+      position: relative;
+      top: 7rem;
+      font-size: 2.5rem;
     }
+  }
 
-    h3 {
-        align-self: flex-start;
-        font-size: clamp(2.2rem, 8vw, 5.5rem);
-        line-height: 1;
-        color: v.$color-4-nogal;
-    }
+  h3 {
+    align-self: flex-start;
+    font-size: clamp(2.2rem, 8vw, 5.5rem);
+    line-height: 1;
+    color: v.$color-4-nogal;
+  }
 
-    p {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 }
 
 .section-linaje-contenido {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  @include m.columna(3rem);
 }
 
 .linaje-arbol {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+  @include m.columna(1.5rem);
+  align-items: center;
 
-    h3 {
-        @media (min-width: 1024px) {
-            align-self: flex-end;
-            font-size: 4rem;
-        }
+  h3 {
+    @include m.desktop {
+      align-self: flex-end;
+      font-size: 4rem;
     }
+  }
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .linaje-origen {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  @include m.columna(1.5rem);
 
-    @media (min-width: 768px) {
-        flex-direction: row;
-        align-items: center;
-        gap: 2rem;
-    }
+  @include m.tablet {
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 .linaje-postal {
-    width: 100%;
-    height: auto;
-    border: 6px solid v.$color-2-arce;
-    transition: opacity 0.3s, transform 0.3s ease-out;
+  width: 100%;
+  height: auto;
+  border: 6px solid v.$color-2-arce;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
 
-    @media (min-width: 768px) {
-        width: 60%;
-    }
+  @include m.tablet {
+    width: 60%;
+  }
 
-    &:hover {
-        transform: scale(1.03);
-    }
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .linaje-origen-texto {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
 
-    @media (min-width: 768px) {
-        padding-top: 0;
+  @include m.tablet {
+    padding-top: 0;
+  }
+
+  p {
+    font-family: v.$tipografia-subtitulos-cursiva;
+    font-size: 1.3rem;
+
+    @include m.desktop {
+      padding-left: 3rem;
     }
-
-    p {
-        font-family: v.$tipografia-subtitulos-cursiva;
-        font-size: 1.3rem;
-
-        @media (min-width: 1024px) {
-            padding-left: 3rem;
-        }
-    }
+  }
 }
 
 .linaje-conventillo {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem 1.3rem;
-    background-color: v.$color-2-arce;
-    color: v.$color-4-nogal;
+  @include m.columna(1.5rem);
+  padding: 2rem 1.3rem;
+  background-color: v.$color-2-arce;
+  color: v.$color-4-nogal;
 
-    @media (min-width: 768px) {
-        padding: 3rem;
+  @include m.tablet {
+    padding: 3rem;
+  }
+
+  @include m.desktop {
+    padding: 4rem;
+  }
+
+  h3 {
+    align-self: flex-start;
+  }
+
+  p {
+    font-family: v.$tipografia-cuerpo-bold;
+    font-size: 1rem;
+
+    @include m.desktop {
+      padding: 0 5rem;
+      font-size: 1.3rem;
     }
-
-    @media (min-width: 1024px) {
-        padding: 4rem;
-    }
-
-    h3 {
-        align-self: flex-start;
-    }
-
-    p {
-        font-family: v.$tipografia-cuerpo-bold;
-        font-size: 1rem;
-
-        @media (min-width: 1024px) {
-            padding: 0 5rem;
-            font-size: 1.3rem;
-        }
-    }
+  }
 }
 
 .linaje-galeria {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 1rem;
 
-    @media (min-width: 768px) {
-        grid-template-columns: repeat(6, 1fr);
-    }
+  @include m.tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
 
-    @media (min-width: 1024px) {
-        gap: 2rem;
-    }
+  @include m.desktop {
+    gap: 2rem;
+  }
 }
 
 .linaje-imagen {
-    width: 100%;
-    transition: opacity 0.3s, transform 0.3s ease-out;
+  width: 100%;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
 
-    @media (min-width: 768px) {
-        grid-column: span 2;
-    }
+  @include m.tablet {
+    grid-column: span 2;
+  }
 
-    &:hover {
-        transform: scale(1.03);
-    }
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .linaje-imagen-horizontal {
-    grid-column: span 3;
+  grid-column: span 3;
 
-    @media (min-width: 768px) {
-        grid-column: span 3;
-    }
+  @include m.tablet {
+    grid-column: span 3;
+  }
 }
 
 .linaje-imagen-centrada {
-    @media (min-width: 768px) {
-        grid-column: 2 / 6;
-    }
+  @include m.tablet {
+    grid-column: 2 / 6;
+  }
 }
 
 // CIERRE
 
 .section-cierre-contenedor {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    @media (min-width: 1024px) {
-        grid-area: cierre;
-    }
+  @include m.desktop {
+    grid-area: cierre;
+  }
 }
 
 .cierre-imagen {
-    width: 100%;
-    max-width: 30rem;
-    height: auto;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
 
-    @media (min-width: 1024px) {
-        max-width: 45rem;
-    }
+  @include m.desktop {
+    max-width: 45rem;
+  }
 }

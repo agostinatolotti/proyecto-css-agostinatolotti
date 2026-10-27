@@ -1,264 +1,259 @@
 @use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
 
 // INICIO
 
 // PRESENTACIÓN
 
 .section-presentacion-contenedor {
-    background-color: v.$color-4-nogal;
-    background-image: url("../assets/images/banner/banner-1.jpg");
-    background-size: cover;
-    background-position: 30% center;
-    color: v.$color-2-arce;
+  background-color: v.$color-4-nogal;
+  background-image: url("../assets/images/banner/banner-1.jpg");
+  background-size: cover;
+  background-position: 30% center;
+  color: v.$color-2-arce;
 
-    @media (min-width: 768px) {
-        background-position: left center;
-    }
+  @include m.tablet {
+    background-position: left center;
+  }
 }
 
 .section-presentacion-contenido {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    text-align: left;
+  @include m.columna(1.5rem);
+  align-items: flex-start;
+  text-align: left;
 
-    h1 {
-        animation: entrada-suave 0.5s ease-out backwards;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        font-family: v.$tipografia-titulos-decorativa;
-        font-size: clamp(3rem, 12vw, 8rem);
-        line-height: 0.5;
-    }
+  h1 {
+    animation: entrada-suave 0.5s ease-out backwards;
+    @include m.columna(0.5rem);
+    font-family: v.$tipografia-titulos-decorativa;
+    font-size: clamp(3rem, 12vw, 8rem);
+    line-height: 0.5;
+  }
 
-    .titulo-outline {
-        margin-left: 1.5em;
-        font-size: clamp(2.25rem, 9vw, 6rem);
-    }
+  .titulo-outline {
+    margin-left: 1.5em;
+    font-size: clamp(2.25rem, 9vw, 6rem);
+  }
 
-    .boton {
-        animation: entrada-suave 0.5s ease-out backwards;
-        animation-delay: 0.4s;
-    }
+  .boton {
+    animation: entrada-suave 0.5s ease-out backwards;
+    animation-delay: 0.4s;
+  }
 }
 
 .section-presentacion-descripcion {
-    animation: entrada-suave 0.5s ease-out backwards;
-    animation-delay: 0.2s;
-    font-family: v.$tipografia-cuerpo-regular;
-    font-size: 1rem;
-    line-height: 1.5;
+  animation: entrada-suave 0.5s ease-out backwards;
+  animation-delay: 0.2s;
+  font-family: v.$tipografia-cuerpo-regular;
+  font-size: 1rem;
+  line-height: 1.5;
 
-    @media (min-width: 1024px) {
-        max-width: 50%;
-    }
+  @include m.desktop {
+    max-width: 50%;
+  }
 }
 
 // CARACTERÍSTICAS
 
 .section-caracteristicas-contenedor {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 2rem 1.5rem;
-    background-color: v.$color-2-arce;
-    color: v.$color-4-nogal;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  background-color: v.$color-2-arce;
+  color: v.$color-4-nogal;
 
-    @media (min-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 3rem;
-        padding: 2rem 3rem;
+  @include m.tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 3rem;
+    padding: 2rem 3rem;
+  }
+
+  @include m.desktop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem 3rem;
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: v.$color-3-roble;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-out;
     }
+  }
 
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-        padding: 2rem 3rem;
-    }
-
-    h2 {
-        position: relative;
-        display: inline-block;
-        font-size: 1rem;
-        text-transform: uppercase;
-
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 3px;
-            background-color: v.$color-3-roble;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease-out;
-        }
-    }
-
-    p {
-        font-size: 0.8rem;
-    }
+  p {
+    font-size: 0.8rem;
+  }
 }
 
 .section-caracteristicas-contenido {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
 
-    @media (min-width: 1024px) {
-        gap: 1rem;
-    }
+  @include m.desktop {
+    gap: 1rem;
+  }
 
-    &:hover h2::after {
-        transform: scaleX(1);
-    }
+  &:hover h2::after {
+    transform: scaleX(1);
+  }
 
-    svg {
-        align-self: center;
-        flex-shrink: 0;
-        width: 3rem;
-        height: 3rem;
-        fill: v.$color-4-nogal;
-    }
+  svg {
+    align-self: center;
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    fill: v.$color-4-nogal;
+  }
 }
 
 // PRODUCTO SEMANAL
 
 .section-producto-semanal-contenedor {
-    background-color: v.$color-1-abedul;
+  background-color: v.$color-1-abedul;
 }
 
 .producto-semanal-grilla {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "imagen"
-        "texto";
-    gap: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "imagen"
+    "texto";
+  gap: 2.5rem;
 
-    @media (min-width: 768px) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "imagen texto";
-        align-items: center;
-        gap: 3rem;
-    }
+  @include m.tablet {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "imagen texto";
+    align-items: center;
+    gap: 3rem;
+  }
 
-    @media (min-width: 1024px) {
-        grid-template-columns: 3fr 4fr 1fr;
-        grid-template-areas: "imagen texto deco";
-        gap: 4rem;
-    }
+  @include m.desktop {
+    grid-template-columns: 3fr 4fr 1fr;
+    grid-template-areas: "imagen texto deco";
+    gap: 4rem;
+  }
 }
 
 .producto-semanal-imagen {
-    grid-area: imagen;
-    width: 100%;
-    outline: 4px solid v.$color-2-arce;
-    outline-offset: 10px;
-    transition: transform 0.3s ease-out;
+  grid-area: imagen;
+  width: 100%;
+  outline: 4px solid v.$color-2-arce;
+  outline-offset: 10px;
+  transition: transform 0.3s ease-out;
 
-    &:hover,
-    &.aos-animate:hover {
-        // Sumé la clase aos-animate porque AOS se la agrega a la foto del producto cuando termina
-        // de animarla y su regla tenía más especificidad que mi hover así que el zoom no funcionaba
-        transform: scale(1.03);
-    }
+  &:hover,
+  &.aos-animate:hover {
+    // Sumé la clase aos-animate porque AOS se la agrega a la foto del producto cuando termina
+    // de animarla y su regla tenía más especificidad que mi hover así que el zoom no funcionaba
+    transform: scale(1.03);
+  }
 }
 
 .producto-semanal-texto {
-    grid-area: texto;
-    color: v.$color-5-ebano;
+  grid-area: texto;
+  color: v.$color-5-ebano;
 }
 
 .producto-semanal-deco {
-    display: none;
-    grid-area: deco;
-    justify-self: center;
-    width: 9rem;
+  display: none;
+  grid-area: deco;
+  justify-self: center;
+  width: 9rem;
 
-    @media (min-width: 1024px) {
-        display: block;
-        width: 100%;
-    }
+  @include m.desktop {
+    display: block;
+    width: 100%;
+  }
 }
 
 // TALLER
 
 .section-taller-contenedor {
-    background-color: v.$color-5-ebano;
-    color: v.$color-2-arce;
+  background-color: v.$color-5-ebano;
+  color: v.$color-2-arce;
 }
 
 .taller-grilla {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+  @include m.columna(2.5rem);
 
-    @media (min-width: 1224px) {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: "contenido galeria";
-        align-items: center;
-        gap: 4rem;
-    }
+  @include m.desktop-grande {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "contenido galeria";
+    align-items: center;
+    gap: 4rem;
+  }
 }
 
 .section-taller-contenido {
-    @media (min-width: 1224px) {
-        grid-area: contenido;
-    }
+  @include m.desktop-grande {
+    grid-area: contenido;
+  }
 }
 
 .taller-direccion {
-    font-family: v.$tipografia-subtitulos-cursiva;
-    font-size: 1.4rem;
-    color: v.$color-3-roble;
+  font-family: v.$tipografia-subtitulos-cursiva;
+  font-size: 1.4rem;
+  color: v.$color-3-roble;
 }
 
 .taller-ciudad {
-    @media (min-width: 1024px) {
-        display: block;
-    }
+  @include m.desktop {
+    display: block;
+  }
 }
 
 .taller-galeria {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  @include m.columna(0.75rem);
 
-    @media (min-width: 1224px) {
-        grid-area: galeria;
-    }
+  @include m.desktop-grande {
+    grid-area: galeria;
+  }
 }
 
 .taller-fila {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .taller-imagen {
-    flex: 1;
-    min-width: 0;
-    width: 100%;
-    transition: opacity 0.3s, transform 0.3s ease-out;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
 
-    &:hover {
-        opacity: 0.8;
-        transform: scale(1.03);
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
+
+  @include m.tablet {
+    &:nth-child(1),
+    &:nth-child(3) {
+      opacity: 0.5;
     }
 
-    @media (min-width: 768px) {
-        &:nth-child(1),
-        &:nth-child(3) {
-            opacity: 0.5;
-        }
-
-        &:nth-child(1):hover,
-        &:nth-child(3):hover {
-            opacity: 0.8;
-        }
+    &:nth-child(1):hover,
+    &:nth-child(3):hover {
+      opacity: 0.8;
     }
+  }
 }

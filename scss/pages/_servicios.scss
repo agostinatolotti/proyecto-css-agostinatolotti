@@ -26,11 +26,9 @@
 // INTRO
 
 .servicios-intro {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  @include m.columna(2rem);
 
-  @media (min-width: 1024px) {
+  @include m.desktop {
     display: grid;
     grid-template-columns: auto 22rem;
     justify-content: center;
@@ -44,16 +42,14 @@
     line-height: 1;
     text-transform: uppercase;
 
-    @media (min-width: 1024px) {
+    @include m.desktop {
       font-size: clamp(3rem, 9vw, 11rem);
     }
   }
 }
 
 .servicios-intro-texto {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  @include m.columna(1.5rem);
 }
 
 .servicios-intro-bajada {
@@ -67,7 +63,7 @@
   font-size: clamp(0.9rem, 4.6vw, 1.8rem);
   white-space: nowrap;
 
-  @media (min-width: 1024px) {
+  @include m.desktop {
     font-size: clamp(1.2rem, 2vw, 1.8rem);
   }
 
@@ -78,7 +74,7 @@
     line-height: 1;
     text-transform: uppercase;
 
-    @media (min-width: 1024px) {
+    @include m.desktop {
       font-size: clamp(2.5rem, 5vw, 6rem);
     }
   }
@@ -97,7 +93,7 @@
   width: 80%;
   max-width: 24rem;
 
-  @media (min-width: 1024px) {
+  @include m.desktop {
     width: 100%;
   }
 }
@@ -108,14 +104,12 @@
   position: relative;
   // Otra vez agregué clip para que no apareciera un scroll
   overflow-x: clip;
-  display: flex;
-  flex-direction: column;
+  @include m.columna(2rem);
   align-items: center;
-  gap: 2rem;
   background-color: v.$color-2-arce;
   text-align: center;
 
-  @media (min-width: 1024px) {
+  @include m.desktop {
     padding-bottom: 6rem;
   }
 
@@ -214,7 +208,7 @@
   max-width: 16rem;
   transform: rotate(8deg);
 
-  @media (min-width: 1024px) {
+  @include m.desktop {
     position: absolute;
     right: 4rem;
     bottom: 2rem;
@@ -227,7 +221,7 @@
 .preguntas {
   @include m.columna(2rem);
 
-  @media (min-width: 1024px) {
+  @include m.desktop {
     display: grid;
     grid-template-columns: 2fr 1fr;
     align-items: center;
@@ -236,9 +230,7 @@
 }
 
 .preguntas-texto {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  @include m.columna(1.5rem);
 }
 
 .preguntas-acordeon {
@@ -284,7 +276,7 @@
   max-width: 18rem;
   transform: rotate(-4deg);
 
-  @media (min-width: 1024px) {
+  @include m.desktop {
     width: 100%;
   }
 }
@@ -292,10 +284,8 @@
 // CIERRE
 
 .servicios-cierre {
-  display: flex;
-  flex-direction: column;
+  @include m.columna(1.25rem);
   align-items: center;
-  gap: 1.25rem;
   background-color: v.$color-4-nogal;
   color: v.$color-2-arce;
   text-align: center;
@@ -305,7 +295,6 @@
   }
 
   p {
-    font-family: v.$tipografia-cuerpo-regular;
     font-family: v.$tipografia-subtitulos-cursiva;
     font-size: 1.6rem;
   }

@@ -1,91 +1,88 @@
 @use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
 
 // CONTACTO
 
 // INFORMACIÓN
 
 .contacto-info {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: -4rem;
-        right: -10rem;
-        width: 34rem;
-        height: 34rem;
-        background-image: url("../assets/images/logo/logo-3-single-color-negativo.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        opacity: 0.06;
-        pointer-events: none;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -4rem;
+    right: -10rem;
+    width: 34rem;
+    height: 34rem;
+    background-image: url("../assets/images/logo/logo-3-single-color-negativo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+  }
 }
 
 .contacto-dato {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  @include m.fila(1rem);
 
-    svg {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 1.5rem;
-        transition: transform 0.3s ease-out;
-    }
+  svg {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease-out;
+  }
 
-    &:hover svg {
-        transform: translateX(4px);
-    }
+  &:hover svg {
+    transform: translateX(4px);
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  p {
+    font-size: 1rem;
+  }
 }
 
 // FORMULARIO
 
 .contacto-formulario-contenedor {
-    background-color: v.$color-1-abedul;
-    color: v.$color-4-nogal;
+  background-color: v.$color-1-abedul;
+  color: v.$color-4-nogal;
 }
 
 .formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  @include m.columna(0.5rem);
 
-    label {
-        margin-top: 1rem;
-        font-family: v.$tipografia-cuerpo-bold;
-        font-size: 1rem;
+  label {
+    margin-top: 1rem;
+    font-family: v.$tipografia-cuerpo-bold;
+    font-size: 1rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid v.$color-3-roble;
+    background-color: transparent;
+    font-family: v.$tipografia-cuerpo-regular;
+    font-size: 1rem;
+    color: v.$color-4-nogal;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: v.$color-4-nogal;
+      outline: none;
     }
+  }
 
-    input,
-    textarea {
-        width: 100%;
-        padding: 0.8rem;
-        border: 2px solid v.$color-3-roble;
-        background-color: transparent;
-        font-family: v.$tipografia-cuerpo-regular;
-        font-size: 1rem;
-        color: v.$color-4-nogal;
-        transition: border-color 0.3s;
+  textarea {
+    min-height: 10rem;
+    resize: vertical;
+  }
 
-        &:focus {
-            border-color: v.$color-4-nogal;
-            outline: none;
-        }
-    }
-
-    textarea {
-        min-height: 10rem;
-        resize: vertical;
-    }
-
-    button {
-        align-self: flex-start;
-        margin-top: 1.5rem;
-    }
+  button {
+    align-self: flex-start;
+    margin-top: 1.5rem;
+  }
 }

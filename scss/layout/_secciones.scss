@@ -1,22 +1,22 @@
+@use "../utilities/mixins" as m;
+
 // SECCIONES GLOBALES
 
 .section-contenedor {
     padding: 3rem 1.5rem;
 
-    @media (min-width: 768px) {
+    @include m.tablet {
         padding: 4rem 3rem;
     }
 
-    @media (min-width: 1024px) {
+    @include m.desktop {
         padding: 4rem 6rem;
     }
 }
 
 .section-contenido {
-    display: flex;
-    flex-direction: column;
+    @include m.columna(1.25rem);
     align-items: flex-start;
-    gap: 1.25rem;
 
     h4 {
         font-size: clamp(1.8rem, 4vw, 2.2rem);

@@ -1,321 +1,318 @@
 @use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
 
 // PROYECTOS
 
 .proyectos-intro {
-    align-items: center;
-    text-align: center;
+  align-items: center;
+  text-align: center;
 
-    p {
-        @media (min-width: 1024px) {
-            max-width: 60%;
-        }
+  p {
+    @include m.desktop {
+      max-width: 60%;
     }
+  }
 }
 
 // TESTIMONIOS
 
 .proyectos-testimonios {
-    background-color: v.$color-2-arce;
-    color: v.$color-4-nogal;
+  background-color: v.$color-2-arce;
+  color: v.$color-4-nogal;
 
-    @media (min-width: 1024px) {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
+  @include m.desktop {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 
 .testimonios-lista {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  list-style: none;
 
-    @media (min-width: 1024px) {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 3rem;
-    }
+  @include m.desktop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
 
-    &:hover .testimonio {
-        transform: scale(0.95);
-    }
+  &:hover .testimonio {
+    transform: scale(0.95);
+  }
 
-    .testimonio:hover {
-        transform: scale(1.05);
-    }
+  .testimonio:hover {
+    transform: scale(1.05);
+  }
 }
 
 .testimonio {
-    display: grid;
-    grid-template-columns: 6rem 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-        "avatar opinion"
-        "nombre opinion";
-    align-items: start;
-    gap: 0.5rem 1rem;
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "avatar opinion"
+    "nombre opinion";
+  align-items: start;
+  gap: 0.5rem 1rem;
 
-    @media (min-width: 1024px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-template-areas:
-            "avatar"
-            "nombre"
-            "opinion";
-        align-content: start;
-        justify-items: center;
-        text-align: center;
-    }
+  @include m.desktop {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "avatar"
+      "nombre"
+      "opinion";
+    align-content: start;
+    justify-items: center;
+    text-align: center;
+  }
 }
 
 .testimonio-invertido {
-    @media (max-width: 767px) {
-        grid-template-columns: 1fr 6rem;
-        grid-template-areas:
-            "opinion avatar"
-            "opinion nombre";
-    }
+  @include m.celular {
+    grid-template-columns: 1fr 6rem;
+    grid-template-areas:
+      "opinion avatar"
+      "opinion nombre";
+  }
 }
 
 .testimonio-avatar {
-    grid-area: avatar;
-    justify-self: center;
-    width: 4rem;
-    height: 4rem;
-    object-fit: cover;
-    border: 3px solid v.$color-4-nogal;
-    border-radius: 50%;
+  grid-area: avatar;
+  justify-self: center;
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border: 3px solid v.$color-4-nogal;
+  border-radius: 50%;
 }
 
 .cliente {
-    grid-area: nombre;
-    justify-self: center;
-    color: v.$color-4-nogal;
+  grid-area: nombre;
+  justify-self: center;
+  color: v.$color-4-nogal;
 }
 
 .opinion {
-    grid-area: opinion;
-    font-family: v.$tipografia-cuerpo-italic;
-    font-size: 1rem;
-    line-height: 1.6;
+  grid-area: opinion;
+  font-family: v.$tipografia-cuerpo-italic;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 // GALERÍAS
 
 .proyectos-galeria {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    background-color: v.$color-1-abedul;
-    color: v.$color-4-nogal;
+  @include m.columna(1.5rem);
+  background-color: v.$color-1-abedul;
+  color: v.$color-4-nogal;
 }
 
 .proyectos-galeria h2,
 .proyectos-living h2 {
-    font-size: clamp(2rem, 8vw, 3rem);
-    text-align: center;
-    text-transform: uppercase;
+  font-size: clamp(2rem, 8vw, 3rem);
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .titulo-leones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+  @include m.fila(1rem);
+  justify-content: center;
 
-    &::before,
-    &::after {
-        content: "";
-        flex-shrink: 0;
-        width: 2.5rem;
-        height: 2.5rem;
-        background-image: url("../assets/images/decorative/deco-1.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+  &::before,
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("../assets/images/decorative/deco-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
-        @media (min-width: 768px) {
-            width: 4.5rem;
-            height: 4.5rem;
-        }
+    @include m.tablet {
+      width: 4.5rem;
+      height: 4.5rem;
     }
+  }
 
-    &::before {
-        transform: scaleX(-1);
-    }
+  &::before {
+    transform: scaleX(-1);
+  }
 }
 
 .joyas-galeria,
 .senorial-galeria {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+  @include m.columna(0.75rem);
 }
 
 // JOYAS
 
 .joyas-fila {
-    display: grid;
-    // Con auto en el medio la columna central toma el ancho justo de su foto,
-    // y con minmax(0, 1fr) las de los costados se reparten lo que sobra en partes iguales
-    // así la foto central queda siempre en el centro
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    gap: 1rem;
-    overflow: hidden;
+  display: grid;
+  // Con auto en el medio la columna central toma el ancho justo de su foto,
+  // y con minmax(0, 1fr) las de los costados se reparten lo que sobra en partes iguales
+  // así la foto central queda siempre en el centro
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 1rem;
+  overflow: hidden;
 }
 
 .joyas-imagen {
-    width: auto;
-    max-width: none;
-    height: 20rem;
-    opacity: 0.5;
-    transition: opacity 0.3s, transform 0.3s ease-out;
+  width: auto;
+  max-width: none;
+  height: 20rem;
+  opacity: 0.5;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
 
-    @media (min-width: 768px) {
-        height: 28rem;
-    }
+  @include m.tablet {
+    height: 28rem;
+  }
 
-    &:nth-child(1) {
-        justify-self: end;
-    }
+  &:nth-child(1) {
+    justify-self: end;
+  }
 
-    &:nth-child(2) {
-        max-width: 70vw;
-        object-fit: cover;
-        opacity: 1;
-    }
+  &:nth-child(2) {
+    max-width: 70vw;
+    object-fit: cover;
+    opacity: 1;
+  }
 
-    &:nth-child(3) {
-        justify-self: start;
-    }
+  &:nth-child(3) {
+    justify-self: start;
+  }
 
-    &:hover {
-        opacity: 0.8;
-        transform: scale(1.03);
-    }
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
 
-    &:nth-child(2):hover {
-        opacity: 1;
-    }
+  &:nth-child(2):hover {
+    opacity: 1;
+  }
 }
 
 // LIVING
 
 .proyectos-living {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    background-color: v.$color-5-ebano;
-    color: v.$color-2-arce;
+  @include m.columna(2.5rem);
+  background-color: v.$color-5-ebano;
+  color: v.$color-2-arce;
 
-    @media (min-width: 1024px) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: start;
-        gap: 3rem 2rem;
-    }
+  @include m.desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    gap: 3rem 2rem;
+  }
 
-    h2 {
-        @media (min-width: 1024px) {
-            grid-column: span 3;
-        }
+  h2 {
+    @include m.desktop {
+      grid-column: span 3;
     }
+  }
 }
 
 .living-item {
-    display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "imagen"
+    "texto";
+  gap: 1rem;
+
+  @include m.tablet {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "imagen texto";
+    align-items: center;
+    gap: 2rem;
+  }
+  @include m.desktop {
     grid-template-columns: 1fr;
     grid-template-areas:
-        "imagen"
-        "texto";
-    gap: 1rem;
-
-    @media (min-width: 768px) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "imagen texto";
-        align-items: center;
-        gap: 2rem;
-    }
-
-    @media (min-width: 1024px) {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "imagen"
-            "texto";
-        gap: 1.5rem;
-    }
+      "imagen"
+      "texto";
+    gap: 1.5rem;
+  }
 }
 
 .living-item-invertido {
-    @media (min-width: 768px) {
-        grid-template-areas: "texto imagen";
-    }
-
-    @media (min-width: 1024px) {
-        grid-template-areas:
-            "imagen"
-            "texto";
-    }
+  @include m.tablet {
+    grid-template-areas: "texto imagen";
+  }
+  @include m.desktop {
+    grid-template-areas:
+      "imagen"
+      "texto";
+  }
 }
 
 .living-imagen {
-    grid-area: imagen;
-    width: 100%;
-    transition: opacity 0.3s, transform 0.3s ease-out;
+  grid-area: imagen;
+  width: 100%;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
 
-    @media (min-width: 1024px) {
-        height: 28vw;
-        object-fit: cover;
-    }
+  @include m.desktop {
+    height: 28vw;
+    object-fit: cover;
+  }
 
-    &:hover {
-        opacity: 0.8;
-        transform: scale(1.03);
-    }
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
 }
 
 .living-descripcion {
-    grid-area: texto;
-    text-align: center;
-    font-size: 1rem;
-    line-height: 1.6;
+  grid-area: texto;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 // SEÑORIAL
 
 .senorial-fila {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  overflow: hidden;
 }
 
 .senorial-imagen {
-    flex-shrink: 0;
-    width: calc(100% - 6rem);
-    aspect-ratio: 2 / 3;
-    object-fit: cover;
-    opacity: 0.5;
-    transition: opacity 0.3s, transform 0.3s ease-out;
+  flex-shrink: 0;
+  width: calc(100% - 6rem);
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  opacity: 0.5;
+  transition:
+    opacity 0.3s,
+    transform 0.3s ease-out;
 
-    @media (min-width: 768px) {
-        width: 40%;
-    }
+  @include m.tablet {
+    width: 40%;
+  }
 
-    @media (min-width: 1024px) {
-        width: 30%;
-    }
+  @include m.desktop {
+    width: 30%;
+  }
 
-    &:nth-child(2) {
-        opacity: 1;
-    }
+  &:nth-child(2) {
+    opacity: 1;
+  }
 
-    &:hover {
-        opacity: 0.8;
-        transform: scale(1.03);
-    }
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.03);
+  }
 
-    &:nth-child(2):hover {
-        opacity: 1;
-    }
+  &:nth-child(2):hover {
+    opacity: 1;
+  }
 }

@@ -1,73 +1,74 @@
 @use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
 
 // PRODUCTO SEMANAL
 
 .producto {
-    display: grid;
-    grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "titulo"
+    "imagen"
+    "ficha";
+  gap: 2rem;
+  background-color: v.$color-1-abedul;
+  color: v.$color-4-nogal;
+
+  @include m.desktop {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "titulo"
-        "imagen"
-        "ficha";
-    gap: 2rem;
-    background-color: v.$color-1-abedul;
-    color: v.$color-4-nogal;
+      "imagen titulo"
+      "imagen ficha";
+    grid-template-rows: auto 1fr;
+    column-gap: 4rem;
+    row-gap: 1rem;
+    align-items: end;
+  }
 
-    @media (min-width: 1024px) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "imagen titulo"
-            "imagen ficha";
-        grid-template-rows: auto 1fr;
-        column-gap: 4rem;
-        row-gap: 1rem;
-        align-items: end;
+  h1 {
+    grid-area: titulo;
+    font-family: v.$tipografia-titulos-decorativa;
+    font-size: clamp(2rem, 8.5vw, 4rem);
+    line-height: 1;
+
+    @include m.desktop {
+      font-size: 4vw;
     }
+  }
 
-    h1 {
-        grid-area: titulo;
-        font-family: v.$tipografia-titulos-decorativa;
-        font-size: clamp(2rem, 8.5vw, 4rem);
-        line-height: 1;
+  .producto-semanal-imagen {
+    grid-area: imagen;
 
-        @media (min-width: 1024px) {
-            font-size: 4vw;
-        }
+    @include m.desktop {
+      align-self: center;
     }
-
-    .producto-semanal-imagen {
-        grid-area: imagen;
-
-        @media (min-width: 1024px) {
-            align-self: center;
-        }
-    }
+  }
 }
 
 .producto-ficha {
-    grid-area: ficha;
+  grid-area: ficha;
 
-    @media (min-width: 1024px) {
-        align-self: start;
-    }
+  @include m.desktop {
+    align-self: start;
+  }
 
-    .producto-fecha {
-        font-family: v.$tipografia-cuerpo-italic;
-        font-size: 1.2rem;
-    }
+  .producto-fecha {
+    font-family: v.$tipografia-cuerpo-italic;
+    font-size: 1.2rem;
+  }
 
-    h2 {
-        font-size: 2rem;
-        text-transform: uppercase;
-    }
+  h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
 
-    .producto-precio {
-        font-family: v.$tipografia-titulos;
-        font-size: 2rem;
-    }
+  .producto-precio {
+    font-family: v.$tipografia-titulos;
+    font-size: 2rem;
+  }
 }
 
 .producto-estado {
-    padding: 0.5rem 1.5rem;
-    background-color: v.$color-4-nogal;
+  padding: 0.5rem 1.5rem;
+  background-color: v.$color-4-nogal;
 }

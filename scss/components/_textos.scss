@@ -4,7 +4,7 @@
 
 .cuerpo-destacado {
     font-family: v.$tipografia-cuerpo-regular;
-    font-size: 0.85rem;
+    font-size: v.$texto-chico;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: v.$color-3-roble;
@@ -12,7 +12,7 @@
 
 .titulo-outline {
     font-family: v.$tipografia-titulos-outline;
-    margin-left: 9rem;
+    margin-left: v.$espaciado-m * 6;
     line-height: 1;
     white-space: nowrap;
 }

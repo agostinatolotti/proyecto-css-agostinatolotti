@@ -1,10 +1,16 @@
 // MIXINS
 
-// MIXINS ESPACIADOS
+// MIXINS ESTRUCTURALES
 
 @mixin columna($espacio) {
   display: flex;
   flex-direction: column;
+  gap: $espacio;
+}
+
+@mixin fila($espacio) {
+  display: flex;
+  align-items: center;
   gap: $espacio;
 }
 
