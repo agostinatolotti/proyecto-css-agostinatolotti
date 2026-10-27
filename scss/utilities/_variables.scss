@@ -30,8 +30,15 @@ $boton-padding: 0.9rem 1.6rem;
 $texto-chico: 0.85rem;
 $texto-base: 1rem;
 $texto-grande: 1.5rem;
+$texto-titulo-intro: clamp(3rem, 14vw, 8rem);
+
+// ESPACIADO ENTRE LETRAS
+
+$letras-boton: 0.06em;
+$letras-destacado: 0.15em;
 
 // DETALLES
 
 $borde: 2px;
 $transicion: 0.3s;
+$transicion-rapida: 0.2s;

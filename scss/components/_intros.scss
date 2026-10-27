@@ -10,7 +10,7 @@
 
     h1 {
         font-family: v.$tipografia-titulos-decorativa;
-        font-size: clamp(3rem, 14vw, 8rem);
+        font-size: v.$texto-titulo-intro;
         line-height: 1;
     }
 }

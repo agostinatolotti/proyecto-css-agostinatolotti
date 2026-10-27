@@ -12,8 +12,8 @@ button,
     font-size: v.$texto-base;
     border: none;
     padding: v.$boton-padding;
-    letter-spacing: 0.06em;
-    transition: background-color v.$transicion, color v.$transicion, transform v.$transicion - 0.1s;
+    letter-spacing: v.$letras-boton;
+    transition: background-color v.$transicion, color v.$transicion, transform v.$transicion-rapida;
 
     &:hover,
     &:focus-visible {
