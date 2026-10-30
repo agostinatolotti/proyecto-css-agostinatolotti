@@ -3,16 +3,16 @@
 // TEXTOS
 
 .cuerpo-destacado {
-    font-family: v.$tipografia-cuerpo-regular;
-    font-size: v.$texto-chico;
-    text-transform: uppercase;
-    letter-spacing: v.$letras-destacado;
-    color: v.$color-3-roble;
+  font-family: v.$tipografia-cuerpo-regular;
+  font-size: v.$texto-chico;
+  text-transform: uppercase;
+  letter-spacing: v.$letras-destacado;
+  color: v.$color-3-roble;
 }
 
 .titulo-outline {
-    font-family: v.$tipografia-titulos-outline;
-    margin-left: v.$espaciado-m * 6;
-    line-height: 1;
-    white-space: nowrap;
+  font-family: v.$tipografia-titulos-outline;
+  margin-left: v.$espaciado-m * 6;
+  line-height: 1;
+  white-space: nowrap;
 }

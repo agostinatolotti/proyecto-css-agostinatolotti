@@ -1197,6 +1197,14 @@ button:active,
   }
 }
 
+.contacto-info::after, .fabricamos::before {
+  content: "";
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
 .servicios {
   background-color: #ebe7df;
   color: #2e1a08;
@@ -1314,17 +1322,12 @@ button:active,
   border-bottom: 2px solid #2e1a08;
 }
 .fabricamos::before {
-  content: "";
-  position: absolute;
   top: 5rem;
   left: -14rem;
   width: 40rem;
   height: 40rem;
   background-image: url("../assets/images/logo/logo-3-single-color.png");
-  background-size: contain;
-  background-repeat: no-repeat;
   opacity: 0.06;
-  pointer-events: none;
 }
 .fabricamos .boton {
   background-color: #2e1a08;
@@ -1774,17 +1777,12 @@ button:active,
   overflow: hidden;
 }
 .contacto-info::after {
-  content: "";
-  position: absolute;
   top: -4rem;
   right: -10rem;
   width: 34rem;
   height: 34rem;
   background-image: url("../assets/images/logo/logo-3-single-color-negativo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
   opacity: 0.06;
-  pointer-events: none;
 }
 
 .contacto-dato {

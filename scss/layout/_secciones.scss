@@ -3,29 +3,29 @@
 // SECCIONES GLOBALES
 
 .section-contenedor {
-    padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem;
 
-    @include m.tablet {
-        padding: 4rem 3rem;
-    }
+  @include m.tablet {
+    padding: 4rem 3rem;
+  }
 
-    @include m.desktop {
-        padding: 4rem 6rem;
-    }
+  @include m.desktop {
+    padding: 4rem 6rem;
+  }
 }
 
 .section-contenido {
-    @include m.columna(1.25rem);
-    align-items: flex-start;
+  @include m.columna(1.25rem);
+  align-items: flex-start;
 
-    h4 {
-        font-size: clamp(1.8rem, 4vw, 2.2rem);
-        line-height: 1.2;
-        text-transform: uppercase;
-    }
+  h4 {
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
 
-    p {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 }

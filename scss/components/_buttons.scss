@@ -4,40 +4,43 @@
 
 button,
 .boton {
-    display: inline-block;
-    background-color: v.$color-2-arce;
-    color: v.$color-4-nogal;
-    font-family: v.$tipografia-cuerpo-regular;
-    text-transform: uppercase;
-    font-size: v.$texto-base;
-    border: none;
-    padding: v.$boton-padding;
-    letter-spacing: v.$letras-boton;
-    transition: background-color v.$transicion, color v.$transicion, transform v.$transicion-rapida;
+  display: inline-block;
+  background-color: v.$color-2-arce;
+  color: v.$color-4-nogal;
+  font-family: v.$tipografia-cuerpo-regular;
+  text-transform: uppercase;
+  font-size: v.$texto-base;
+  border: none;
+  padding: v.$boton-padding;
+  letter-spacing: v.$letras-boton;
+  transition:
+    background-color v.$transicion,
+    color v.$transicion,
+    transform v.$transicion-rapida;
 
-    &:hover,
-    &:focus-visible {
-        background-color: v.$color-3-roble;
-    }
+  &:hover,
+  &:focus-visible {
+    background-color: v.$color-3-roble;
+  }
 
-    &:focus-visible {
-        outline: v.$borde solid v.$color-3-roble;
-        outline-offset: v.$borde * 2;
-    }
+  &:focus-visible {
+    outline: v.$borde solid v.$color-3-roble;
+    outline-offset: v.$borde * 2;
+  }
 
-    &:active {
-        transform: scale(0.95);
-    }
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .boton-secundario {
-    background-color: transparent;
-    border: v.$borde solid v.$color-3-roble;
-    color: v.$color-3-roble;
+  background-color: transparent;
+  border: v.$borde solid v.$color-3-roble;
+  color: v.$color-3-roble;
 
-    &:hover,
-    &:focus-visible {
-        background-color: v.$color-3-roble;
-        color: v.$color-5-ebano;
-    }
+  &:hover,
+  &:focus-visible {
+    background-color: v.$color-3-roble;
+    color: v.$color-5-ebano;
+  }
 }

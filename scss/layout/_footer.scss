@@ -4,137 +4,137 @@
 // FOOTER
 
 .footer-top {
-    @include m.columna(1.5rem);
+  @include m.columna(1.5rem);
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  color: v.$color-2-arce;
+  border-top: 1px solid v.$color-3-roble;
+
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas:
+      "logos info redes"
+      "eslogan eslogan eslogan";
+    justify-content: space-around;
     align-items: center;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    color: v.$color-2-arce;
-    border-top: 1px solid v.$color-3-roble;
+    padding: 2rem 3rem;
+  }
 
-    @include m.tablet {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        grid-template-areas:
-            "logos info redes"
-            "eslogan eslogan eslogan";
-        justify-content: space-around;
-        align-items: center;
-        padding: 2rem 3rem;
-    }
-
-    @include m.desktop {
-        grid-template-columns: repeat(4, auto);
-        grid-template-areas: "logos info redes eslogan";
-        padding: 2rem 6rem;
-    }
+  @include m.desktop {
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas: "logos info redes eslogan";
+    padding: 2rem 6rem;
+  }
 }
 
 .footer-logos {
-    @include m.fila(1rem);
-    flex-wrap: wrap;
-    justify-content: center;
-    transition: transform 0.3s ease-out;
+  @include m.fila(1rem);
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: transform 0.3s ease-out;
 
-    @include m.tablet {
-        grid-area: logos;
-    }
+  @include m.tablet {
+    grid-area: logos;
+  }
 
-    &:hover {
-        transform: scale(1.05);
-    }
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .footer-isotipo {
-    height: 4.5rem;
+  height: 4.5rem;
 }
 
 .footer-imagotipo {
-    height: 2.5rem;
+  height: 2.5rem;
 }
 
 .footer-contenedor {
-    @include m.columna(0.5rem);
+  @include m.columna(0.5rem);
 
-    @include m.tablet {
-        grid-area: info;
-    }
+  @include m.tablet {
+    grid-area: info;
+  }
 }
 
 .footer-info {
-    @include m.fila(1rem);
-    color: v.$color-2-arce;
+  @include m.fila(1rem);
+  color: v.$color-2-arce;
 
-    p {
-        font-size: 1rem;
-    }
+  p {
+    font-size: 1rem;
+  }
 
-    svg {
-        flex-shrink: 0;
-        transition: transform 0.3s ease-out;
-    }
+  svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease-out;
+  }
 
-    &:hover svg {
-        transform: translateX(4px);
-    }
+  &:hover svg {
+    transform: translateX(4px);
+  }
 }
 
 .footer-redes {
-    @include m.fila(1.5rem);
-    fill: v.$color-3-roble;
+  @include m.fila(1.5rem);
+  fill: v.$color-3-roble;
 
-    @include m.tablet {
-        grid-area: redes;
+  @include m.tablet {
+    grid-area: redes;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease-out;
+
+    &:hover {
+      transform: translateY(-4px);
     }
-
-    svg {
-        width: 2rem;
-        height: 2rem;
-        transition: transform 0.3s ease-out;
-
-        &:hover {
-            transform: translateY(-4px);
-        }
-    }
+  }
 }
 
 .footer-eslogan {
-    @include m.tablet {
-        grid-area: eslogan;
-    }
+  @include m.tablet {
+    grid-area: eslogan;
+  }
 
-    p {
-        font-family: v.$tipografia-titulos;
-        font-size: 1.25rem;
+  p {
+    font-family: v.$tipografia-titulos;
+    font-size: 1.25rem;
 
-        @include m.desktop {
-            font-size: 1.5rem;
-        }
+    @include m.desktop {
+      font-size: 1.5rem;
     }
+  }
 }
 
 .footer-bottom {
-    display: flex;
-    justify-content: center;
-    padding: 0.6rem 1rem;
-    text-align: center;
-    background-color: v.$color-4-nogal;
-    color: v.$color-2-arce;
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  background-color: v.$color-4-nogal;
+  color: v.$color-2-arce;
 
-    p {
-        font-family: v.$tipografia-cuerpo-italic;
-        font-size: 0.7rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
+  p {
+    font-family: v.$tipografia-cuerpo-italic;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus-visible {
+      color: v.$color-3-roble;
     }
-
-    a {
-        color: inherit;
-        text-decoration: underline;
-        transition: color 0.3s;
-
-        &:hover,
-        &:focus-visible {
-            color: v.$color-3-roble;
-        }
-    }
+  }
 }

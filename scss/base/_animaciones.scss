@@ -1,78 +1,78 @@
 // KEYFRAMES
 
 @keyframes aparecer {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes menu-entrada {
-    0% {
-        opacity: 0;
-        transform: translateY(-0.75rem);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-0.75rem);
+  }
 
-    60% {
-        opacity: 1;
-    }
+  60% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes entrada-suave {
-    0% {
-        opacity: 0;
-        transform: translateX(-1.5rem);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
 
-    60% {
-        opacity: 1;
-    }
+  60% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes latido {
-    0%,
-    100% {
-        transform: scale(1);
-    }
+  0%,
+  100% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.08);
-    }
+  50% {
+    transform: scale(1.08);
+  }
 }
 
 // REGLAS AOS
 
 [data-aos="fade-up"] {
-    transform: translateY(1.5rem);
+  transform: translateY(1.5rem);
 }
 
 [data-aos="zoom-in"] {
-    transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 [data-aos="fade-right"] {
-    transform: translateX(-1.5rem);
+  transform: translateX(-1.5rem);
 }
 
 [data-aos="fade-left"] {
-    transform: translateX(1.5rem);
+  transform: translateX(1.5rem);
 }
 
 // REGLAS PARTICULARES
 
 main {
-    animation: aparecer 0.4s ease-out;
+  animation: aparecer 0.4s ease-out;
 }

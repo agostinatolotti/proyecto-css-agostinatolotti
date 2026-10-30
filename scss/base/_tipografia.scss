@@ -3,51 +3,51 @@
 // RUTA A LAS TIPOGRAFÍAS
 
 @font-face {
-    font-family: 'Athelas Regular';
-    src: url("../assets/fonts/athelas-regular.ttf");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Athelas Regular";
+  src: url("../assets/fonts/athelas-regular.ttf");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Athelas Bold";
-    src: url("../assets/fonts/athelas-bold.ttf");
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Athelas Bold";
+  src: url("../assets/fonts/athelas-bold.ttf");
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Athelas Italic";
-    src: url("../assets/fonts/athelas-italic.ttf");
-    font-weight: 400;
-    font-style: italic;
+  font-family: "Athelas Italic";
+  src: url("../assets/fonts/athelas-italic.ttf");
+  font-weight: 400;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: "Athelas Bold Italic";
-    src: url("../assets/fonts/athelas-bold-italic.ttf");
-    font-weight: 700;
-    font-style: italic;
+  font-family: "Athelas Bold Italic";
+  src: url("../assets/fonts/athelas-bold-italic.ttf");
+  font-weight: 700;
+  font-style: italic;
 }
 
 @font-face {
-    font-family: "Waymar Regular";
-    src: url("../assets/fonts/waymar-regular.ttf")
+  font-family: "Waymar Regular";
+  src: url("../assets/fonts/waymar-regular.ttf");
 }
 
 @font-face {
-    font-family: "Waymar Script";
-    src: url("../assets/fonts/waymar-script.ttf");
+  font-family: "Waymar Script";
+  src: url("../assets/fonts/waymar-script.ttf");
 }
 
 @font-face {
-    font-family: "Waymar Outline";
-    src: url("../assets/fonts/waymar-outline.ttf");
+  font-family: "Waymar Outline";
+  src: url("../assets/fonts/waymar-outline.ttf");
 }
 
 @font-face {
-    font-family: "Waymar Ornate";
-    src: url("../assets/fonts/waymar-ornate.ttf");
+  font-family: "Waymar Ornate";
+  src: url("../assets/fonts/waymar-ornate.ttf");
 }
 
 // ESTILOS TIPOGRÁFICOS
@@ -58,11 +58,11 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: v.$tipografia-titulos;
-    font-size: 2.5rem;
+  font-family: v.$tipografia-titulos;
+  font-size: 2.5rem;
 }
 
 p {
-    font-family: v.$tipografia-cuerpo-regular;
-    font-size: 1.25rem;
+  font-family: v.$tipografia-cuerpo-regular;
+  font-size: 1.25rem;
 }
