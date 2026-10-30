@@ -1,5 +1,6 @@
 @use "../utilities/variables" as v;
 @use "../utilities/mixins" as m;
+@use "../utilities/extends";
 
 // CONTACTO
 
@@ -10,17 +11,13 @@
   overflow: hidden;
 
   &::after {
-    content: "";
-    position: absolute;
+    @extend %escudo-decorativo;
     top: -4rem;
     right: -10rem;
     width: 34rem;
     height: 34rem;
     background-image: url("../assets/images/logo/logo-3-single-color-negativo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
     opacity: 0.06;
-    pointer-events: none;
   }
 }
 
